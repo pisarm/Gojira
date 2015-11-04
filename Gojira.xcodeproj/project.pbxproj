@@ -1,0 +1,908 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E37B71BE96A5B00B614B2 /* SettingsController.swift */; };
+		E458F3B81BE7EEC000E3BEA0 /* JiraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */; };
+		E458F3B91BE7EF1E00E3BEA0 /* JiraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */; };
+		E458F3BB1BE7F08600E3BEA0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */; };
+		E458F3BF1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM in Carthage dSym */ = {isa = PBXBuildFile; fileRef = E458F3BE1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM */; };
+		E47E6F991BE6B1CA00B1E5D2 /* GojiraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6F981BE6B1CA00B1E5D2 /* GojiraTests.swift */; };
+		E47E6F9E1BE6B1CA00B1E5D2 /* Gojira WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E47E6F9D1BE6B1CA00B1E5D2 /* Gojira WatchKit App.app */; };
+		E47E6FA61BE6B1CA00B1E5D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FA51BE6B1CA00B1E5D2 /* Assets.xcassets */; };
+		E47E6FAD1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E47E6FAC1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E47E6FD51BE6B46800B1E5D2 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FD31BE6B46800B1E5D2 /* Launch.storyboard */; };
+		E47E6FD61BE6B46800B1E5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FD41BE6B46800B1E5D2 /* Main.storyboard */; };
+		E47E6FD81BE6B49000B1E5D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FD71BE6B49000B1E5D2 /* Assets.xcassets */; };
+		E47E6FDE1BE6B4E200B1E5D2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FDB1BE6B4E200B1E5D2 /* DataService.swift */; };
+		E47E6FE01BE6B4E200B1E5D2 /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FDD1BE6B4E200B1E5D2 /* WatchService.swift */; };
+		E47E6FE51BE6B4EB00B1E5D2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE11BE6B4EB00B1E5D2 /* MainView.swift */; };
+		E47E6FE61BE6B4EB00B1E5D2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE21BE6B4EB00B1E5D2 /* MainViewModel.swift */; };
+		E47E6FE71BE6B4EB00B1E5D2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE31BE6B4EB00B1E5D2 /* SettingsView.swift */; };
+		E47E6FE81BE6B4EB00B1E5D2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE41BE6B4EB00B1E5D2 /* SettingsViewModel.swift */; };
+		E47E6FEC1BE6B5A500B1E5D2 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47E6FEB1BE6B5A500B1E5D2 /* Bond.framework */; };
+		E47E6FEE1BE6B5A800B1E5D2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47E6FED1BE6B5A800B1E5D2 /* SwiftyJSON.framework */; };
+		E47E6FF01BE6B5B900B1E5D2 /* Bond.framework.dSYM in Carthage dSym */ = {isa = PBXBuildFile; fileRef = E47E6FEF1BE6B5B900B1E5D2 /* Bond.framework.dSYM */; };
+		E47E6FF21BE6B5C300B1E5D2 /* SwiftyJSON.framework.dSYM in Carthage dSym */ = {isa = PBXBuildFile; fileRef = E47E6FF11BE6B5C300B1E5D2 /* SwiftyJSON.framework.dSYM */; };
+		E47E6FF51BE6B60F00B1E5D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FF41BE6B60F00B1E5D2 /* AppDelegate.swift */; };
+		E47E6FF71BE6B81700B1E5D2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FF61BE6B81700B1E5D2 /* Interface.storyboard */; };
+		E47E6FFB1BE6BA1700B1E5D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FFA1BE6BA1700B1E5D2 /* Assets.xcassets */; };
+		E47E70051BE6BAA600B1E5D2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70041BE6BAA600B1E5D2 /* ExtensionDelegate.swift */; };
+		E47E700A1BE6BAAD00B1E5D2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70061BE6BAAD00B1E5D2 /* ComplicationController.swift */; };
+		E47E700B1BE6BAAD00B1E5D2 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70071BE6BAAD00B1E5D2 /* GlanceController.swift */; };
+		E47E700C1BE6BAAD00B1E5D2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70081BE6BAAD00B1E5D2 /* InterfaceController.swift */; };
+		E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */; };
+		E47E70101BE6BAB400B1E5D2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700E1BE6BAB400B1E5D2 /* DataService.swift */; };
+		E47E70111BE6BAB400B1E5D2 /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700F1BE6BAB400B1E5D2 /* WatchService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E47E6F951BE6B1CA00B1E5D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E47E6F781BE6B1CA00B1E5D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E47E6F7F1BE6B1CA00B1E5D2;
+			remoteInfo = Gojira;
+		};
+		E47E6F9F1BE6B1CA00B1E5D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E47E6F781BE6B1CA00B1E5D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E47E6F9C1BE6B1CA00B1E5D2;
+			remoteInfo = "Gojira WatchKit App";
+		};
+		E47E6FAE1BE6B1CA00B1E5D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E47E6F781BE6B1CA00B1E5D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E47E6FAB1BE6B1CA00B1E5D2;
+			remoteInfo = "Gojira WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E458F3BC1BE7F09000E3BEA0 /* Carthage dSym */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				E458F3BF1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM in Carthage dSym */,
+			);
+			name = "Carthage dSym";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6FC51BE6B1CA00B1E5D2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E47E6FAD1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6FC91BE6B1CA00B1E5D2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E47E6F9E1BE6B1CA00B1E5D2 /* Gojira WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6FEA1BE6B57A00B1E5D2 /* Carthage dSym */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				E47E6FF01BE6B5B900B1E5D2 /* Bond.framework.dSYM in Carthage dSym */,
+				E47E6FF21BE6B5C300B1E5D2 /* SwiftyJSON.framework.dSYM in Carthage dSym */,
+			);
+			name = "Carthage dSym";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E40E37B71BE96A5B00B614B2 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiraService.swift; sourceTree = "<group>"; };
+		E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../../Carthage/Build/watchOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		E458F3BE1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = ../../Carthage/Build/watchOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
+		E47E6F801BE6B1CA00B1E5D2 /* Gojira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gojira.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E47E6F941BE6B1CA00B1E5D2 /* GojiraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GojiraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E47E6F981BE6B1CA00B1E5D2 /* GojiraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojiraTests.swift; sourceTree = "<group>"; };
+		E47E6F9A1BE6B1CA00B1E5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47E6F9D1BE6B1CA00B1E5D2 /* Gojira WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gojira WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E47E6FA51BE6B1CA00B1E5D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E47E6FA71BE6B1CA00B1E5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47E6FAC1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Gojira WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E47E6FD31BE6B46800B1E5D2 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		E47E6FD41BE6B46800B1E5D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E47E6FD71BE6B49000B1E5D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E47E6FDB1BE6B4E200B1E5D2 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		E47E6FDD1BE6B4E200B1E5D2 /* WatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
+		E47E6FE11BE6B4EB00B1E5D2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E47E6FE21BE6B4EB00B1E5D2 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E47E6FE31BE6B4EB00B1E5D2 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E47E6FE41BE6B4EB00B1E5D2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		E47E6FEB1BE6B5A500B1E5D2 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = ../../Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
+		E47E6FED1BE6B5A800B1E5D2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		E47E6FEF1BE6B5B900B1E5D2 /* Bond.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Bond.framework.dSYM; path = ../../Carthage/Build/iOS/Bond.framework.dSYM; sourceTree = "<group>"; };
+		E47E6FF11BE6B5C300B1E5D2 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = ../../Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
+		E47E6FF41BE6B60F00B1E5D2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E47E6FF61BE6B81700B1E5D2 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		E47E6FFA1BE6BA1700B1E5D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E47E6FFC1BE6BA2D00B1E5D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47E70001BE6BA4300B1E5D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47E70041BE6BAA600B1E5D2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E47E70061BE6BAAD00B1E5D2 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		E47E70071BE6BAAD00B1E5D2 /* GlanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		E47E70081BE6BAAD00B1E5D2 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E47E700E1BE6BAB400B1E5D2 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		E47E700F1BE6BAB400B1E5D2 /* WatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E47E6F7D1BE6B1CA00B1E5D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47E6FEC1BE6B5A500B1E5D2 /* Bond.framework in Frameworks */,
+				E47E6FEE1BE6B5A800B1E5D2 /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6F911BE6B1CA00B1E5D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6FA91BE6B1CA00B1E5D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E458F3BB1BE7F08600E3BEA0 /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E458F3B41BE7EE3E00E3BEA0 /* Gojira Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E458F3B51BE7EEA500E3BEA0 /* Source */,
+			);
+			path = "Gojira Shared";
+			sourceTree = "<group>";
+		};
+		E458F3B51BE7EEA500E3BEA0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E458F3B61BE7EEB200E3BEA0 /* Services */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E458F3B61BE7EEB200E3BEA0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E458F3C01BE7F10B00E3BEA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */,
+				E458F3BE1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E47E6F771BE6B1CA00B1E5D2 = {
+			isa = PBXGroup;
+			children = (
+				E47E6F821BE6B1CA00B1E5D2 /* Gojira */,
+				E458F3B41BE7EE3E00E3BEA0 /* Gojira Shared */,
+				E47E6FA11BE6B1CA00B1E5D2 /* Gojira WatchKit App */,
+				E47E6FB01BE6B1CA00B1E5D2 /* Gojira WatchKit Extension */,
+				E47E6F971BE6B1CA00B1E5D2 /* GojiraTests */,
+				E47E6F811BE6B1CA00B1E5D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E47E6F811BE6B1CA00B1E5D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6F801BE6B1CA00B1E5D2 /* Gojira.app */,
+				E47E6F9D1BE6B1CA00B1E5D2 /* Gojira WatchKit App.app */,
+				E47E6FAC1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension.appex */,
+				E47E6F941BE6B1CA00B1E5D2 /* GojiraTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E47E6F821BE6B1CA00B1E5D2 /* Gojira */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FD01BE6B40500B1E5D2 /* Resources */,
+				E47E6FD11BE6B40B00B1E5D2 /* Source */,
+			);
+			path = Gojira;
+			sourceTree = "<group>";
+		};
+		E47E6F971BE6B1CA00B1E5D2 /* GojiraTests */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6F981BE6B1CA00B1E5D2 /* GojiraTests.swift */,
+				E47E6F9A1BE6B1CA00B1E5D2 /* Info.plist */,
+			);
+			path = GojiraTests;
+			sourceTree = "<group>";
+		};
+		E47E6FA11BE6B1CA00B1E5D2 /* Gojira WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FA51BE6B1CA00B1E5D2 /* Assets.xcassets */,
+				E47E6FA71BE6B1CA00B1E5D2 /* Info.plist */,
+				E47E6FF61BE6B81700B1E5D2 /* Interface.storyboard */,
+			);
+			path = "Gojira WatchKit App";
+			sourceTree = "<group>";
+		};
+		E47E6FB01BE6B1CA00B1E5D2 /* Gojira WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FF81BE6B9D100B1E5D2 /* Resources */,
+				E47E6FF91BE6B9D700B1E5D2 /* Source */,
+			);
+			path = "Gojira WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		E47E6FD01BE6B40500B1E5D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FD71BE6B49000B1E5D2 /* Assets.xcassets */,
+				E47E6FF31BE6B5CA00B1E5D2 /* Frameworks */,
+				E47E70001BE6BA4300B1E5D2 /* Info.plist */,
+				E47E6FD21BE6B45500B1E5D2 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E47E6FD11BE6B40B00B1E5D2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FF41BE6B60F00B1E5D2 /* AppDelegate.swift */,
+				E47E6FD91BE6B4AA00B1E5D2 /* Services */,
+				E47E6FDA1BE6B4B000B1E5D2 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E47E6FD21BE6B45500B1E5D2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FD31BE6B46800B1E5D2 /* Launch.storyboard */,
+				E47E6FD41BE6B46800B1E5D2 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E47E6FD91BE6B4AA00B1E5D2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FDB1BE6B4E200B1E5D2 /* DataService.swift */,
+				E47E6FDD1BE6B4E200B1E5D2 /* WatchService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E47E6FDA1BE6B4B000B1E5D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FE11BE6B4EB00B1E5D2 /* MainView.swift */,
+				E47E6FE21BE6B4EB00B1E5D2 /* MainViewModel.swift */,
+				E47E6FE31BE6B4EB00B1E5D2 /* SettingsView.swift */,
+				E47E6FE41BE6B4EB00B1E5D2 /* SettingsViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E47E6FF31BE6B5CA00B1E5D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FEB1BE6B5A500B1E5D2 /* Bond.framework */,
+				E47E6FEF1BE6B5B900B1E5D2 /* Bond.framework.dSYM */,
+				E47E6FED1BE6B5A800B1E5D2 /* SwiftyJSON.framework */,
+				E47E6FF11BE6B5C300B1E5D2 /* SwiftyJSON.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E47E6FF81BE6B9D100B1E5D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E47E6FFA1BE6BA1700B1E5D2 /* Assets.xcassets */,
+				E458F3C01BE7F10B00E3BEA0 /* Frameworks */,
+				E47E6FFC1BE6BA2D00B1E5D2 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E47E6FF91BE6B9D700B1E5D2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E47E70041BE6BAA600B1E5D2 /* ExtensionDelegate.swift */,
+				E47E70021BE6BA8100B1E5D2 /* Services */,
+				E47E70031BE6BA8700B1E5D2 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E47E70021BE6BA8100B1E5D2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E47E700E1BE6BAB400B1E5D2 /* DataService.swift */,
+				E47E700F1BE6BAB400B1E5D2 /* WatchService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E47E70031BE6BA8700B1E5D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E47E70061BE6BAAD00B1E5D2 /* ComplicationController.swift */,
+				E47E70071BE6BAAD00B1E5D2 /* GlanceController.swift */,
+				E47E70081BE6BAAD00B1E5D2 /* InterfaceController.swift */,
+				E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */,
+				E40E37B71BE96A5B00B614B2 /* SettingsController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E47E6F7F1BE6B1CA00B1E5D2 /* Gojira */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E47E6FCA1BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "Gojira" */;
+			buildPhases = (
+				E47E6F7C1BE6B1CA00B1E5D2 /* Sources */,
+				E47E6F7D1BE6B1CA00B1E5D2 /* Frameworks */,
+				E47E6F7E1BE6B1CA00B1E5D2 /* Resources */,
+				E47E6FC91BE6B1CA00B1E5D2 /* Embed Watch Content */,
+				E47E6FE91BE6B52300B1E5D2 /* Carthage Copy */,
+				E47E6FEA1BE6B57A00B1E5D2 /* Carthage dSym */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E47E6FA01BE6B1CA00B1E5D2 /* PBXTargetDependency */,
+			);
+			name = Gojira;
+			productName = Gojira;
+			productReference = E47E6F801BE6B1CA00B1E5D2 /* Gojira.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E47E6F931BE6B1CA00B1E5D2 /* GojiraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E47E6FCD1BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "GojiraTests" */;
+			buildPhases = (
+				E47E6F901BE6B1CA00B1E5D2 /* Sources */,
+				E47E6F911BE6B1CA00B1E5D2 /* Frameworks */,
+				E47E6F921BE6B1CA00B1E5D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E47E6F961BE6B1CA00B1E5D2 /* PBXTargetDependency */,
+			);
+			name = GojiraTests;
+			productName = GojiraTests;
+			productReference = E47E6F941BE6B1CA00B1E5D2 /* GojiraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E47E6F9C1BE6B1CA00B1E5D2 /* Gojira WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E47E6FC61BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "Gojira WatchKit App" */;
+			buildPhases = (
+				E47E6F9B1BE6B1CA00B1E5D2 /* Resources */,
+				E47E6FC51BE6B1CA00B1E5D2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E47E6FAF1BE6B1CA00B1E5D2 /* PBXTargetDependency */,
+			);
+			name = "Gojira WatchKit App";
+			productName = "Gojira WatchKit App";
+			productReference = E47E6F9D1BE6B1CA00B1E5D2 /* Gojira WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E47E6FAB1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E47E6FC21BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "Gojira WatchKit Extension" */;
+			buildPhases = (
+				E47E6FA81BE6B1CA00B1E5D2 /* Sources */,
+				E47E6FA91BE6B1CA00B1E5D2 /* Frameworks */,
+				E47E6FAA1BE6B1CA00B1E5D2 /* Resources */,
+				E458F3BD1BE7F0C600E3BEA0 /* Carthage Copy */,
+				E458F3BC1BE7F09000E3BEA0 /* Carthage dSym */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gojira WatchKit Extension";
+			productName = "Gojira WatchKit Extension";
+			productReference = E47E6FAC1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E47E6F781BE6B1CA00B1E5D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = pisarm.dk;
+				TargetAttributes = {
+					E47E6F7F1BE6B1CA00B1E5D2 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = W876623E2K;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					E47E6F931BE6B1CA00B1E5D2 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = E47E6F7F1BE6B1CA00B1E5D2;
+					};
+					E47E6F9C1BE6B1CA00B1E5D2 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = W876623E2K;
+					};
+					E47E6FAB1BE6B1CA00B1E5D2 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = E47E6F7B1BE6B1CA00B1E5D2 /* Build configuration list for PBXProject "Gojira" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E47E6F771BE6B1CA00B1E5D2;
+			productRefGroup = E47E6F811BE6B1CA00B1E5D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E47E6F7F1BE6B1CA00B1E5D2 /* Gojira */,
+				E47E6F9C1BE6B1CA00B1E5D2 /* Gojira WatchKit App */,
+				E47E6FAB1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension */,
+				E47E6F931BE6B1CA00B1E5D2 /* GojiraTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E47E6F7E1BE6B1CA00B1E5D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47E6FD81BE6B49000B1E5D2 /* Assets.xcassets in Resources */,
+				E47E6FD51BE6B46800B1E5D2 /* Launch.storyboard in Resources */,
+				E47E6FD61BE6B46800B1E5D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6F921BE6B1CA00B1E5D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6F9B1BE6B1CA00B1E5D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47E6FA61BE6B1CA00B1E5D2 /* Assets.xcassets in Resources */,
+				E47E6FF71BE6B81700B1E5D2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6FAA1BE6B1CA00B1E5D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47E6FFB1BE6BA1700B1E5D2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E458F3BD1BE7F0C600E3BEA0 /* Carthage Copy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/SwiftyJSON.framework",
+			);
+			name = "Carthage Copy";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks";
+		};
+		E47E6FE91BE6B52300B1E5D2 /* Carthage Copy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
+			);
+			name = "Carthage Copy";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E47E6F7C1BE6B1CA00B1E5D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47E6FF51BE6B60F00B1E5D2 /* AppDelegate.swift in Sources */,
+				E47E6FDE1BE6B4E200B1E5D2 /* DataService.swift in Sources */,
+				E458F3B81BE7EEC000E3BEA0 /* JiraService.swift in Sources */,
+				E47E6FE51BE6B4EB00B1E5D2 /* MainView.swift in Sources */,
+				E47E6FE61BE6B4EB00B1E5D2 /* MainViewModel.swift in Sources */,
+				E47E6FE71BE6B4EB00B1E5D2 /* SettingsView.swift in Sources */,
+				E47E6FE81BE6B4EB00B1E5D2 /* SettingsViewModel.swift in Sources */,
+				E47E6FE01BE6B4E200B1E5D2 /* WatchService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6F901BE6B1CA00B1E5D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47E6F991BE6B1CA00B1E5D2 /* GojiraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47E6FA81BE6B1CA00B1E5D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E47E700A1BE6BAAD00B1E5D2 /* ComplicationController.swift in Sources */,
+				E47E70101BE6BAB400B1E5D2 /* DataService.swift in Sources */,
+				E47E70051BE6BAA600B1E5D2 /* ExtensionDelegate.swift in Sources */,
+				E47E700B1BE6BAAD00B1E5D2 /* GlanceController.swift in Sources */,
+				E47E700C1BE6BAAD00B1E5D2 /* InterfaceController.swift in Sources */,
+				E458F3B91BE7EF1E00E3BEA0 /* JiraService.swift in Sources */,
+				E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */,
+				E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */,
+				E47E70111BE6BAB400B1E5D2 /* WatchService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E47E6F961BE6B1CA00B1E5D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E47E6F7F1BE6B1CA00B1E5D2 /* Gojira */;
+			targetProxy = E47E6F951BE6B1CA00B1E5D2 /* PBXContainerItemProxy */;
+		};
+		E47E6FA01BE6B1CA00B1E5D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E47E6F9C1BE6B1CA00B1E5D2 /* Gojira WatchKit App */;
+			targetProxy = E47E6F9F1BE6B1CA00B1E5D2 /* PBXContainerItemProxy */;
+		};
+		E47E6FAF1BE6B1CA00B1E5D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E47E6FAB1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension */;
+			targetProxy = E47E6FAE1BE6B1CA00B1E5D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E47E6FC01BE6B1CA00B1E5D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E47E6FC11BE6B1CA00B1E5D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E47E6FC31BE6B1CA00B1E5D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "Gojira WatchKit Extension/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Gojira.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E47E6FC41BE6B1CA00B1E5D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "Gojira WatchKit Extension/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Gojira.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		E47E6FC71BE6B1CA00B1E5D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Gojira_WatchKit_Extension;
+				INFOPLIST_FILE = "Gojira WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Gojira.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E47E6FC81BE6B1CA00B1E5D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Gojira_WatchKit_Extension;
+				INFOPLIST_FILE = "Gojira WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Gojira.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		E47E6FCB1BE6B1CA00B1E5D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Gojira/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Gojira;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E47E6FCC1BE6B1CA00B1E5D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Gojira/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.Gojira;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E47E6FCE1BE6B1CA00B1E5D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GojiraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.GojiraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gojira.app/Gojira";
+			};
+			name = Debug;
+		};
+		E47E6FCF1BE6B1CA00B1E5D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GojiraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.pisarm.GojiraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gojira.app/Gojira";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E47E6F7B1BE6B1CA00B1E5D2 /* Build configuration list for PBXProject "Gojira" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E47E6FC01BE6B1CA00B1E5D2 /* Debug */,
+				E47E6FC11BE6B1CA00B1E5D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E47E6FC21BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "Gojira WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E47E6FC31BE6B1CA00B1E5D2 /* Debug */,
+				E47E6FC41BE6B1CA00B1E5D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E47E6FC61BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "Gojira WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E47E6FC71BE6B1CA00B1E5D2 /* Debug */,
+				E47E6FC81BE6B1CA00B1E5D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E47E6FCA1BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "Gojira" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E47E6FCB1BE6B1CA00B1E5D2 /* Debug */,
+				E47E6FCC1BE6B1CA00B1E5D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E47E6FCD1BE6B1CA00B1E5D2 /* Build configuration list for PBXNativeTarget "GojiraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E47E6FCE1BE6B1CA00B1E5D2 /* Debug */,
+				E47E6FCF1BE6B1CA00B1E5D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E47E6F781BE6B1CA00B1E5D2 /* Project object */;
+}
