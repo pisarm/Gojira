@@ -46,7 +46,23 @@
         <!--SettingsController-->
         <scene sceneID="S7X-2h-gEJ">
             <objects>
-                <controller identifier="SettingsController" id="wJF-oy-rDj" customClass="SettingsController" customModule="Gojira_WatchKit_Extension"/>
+                <controller identifier="SettingsController" id="wJF-oy-rDj" customClass="SettingsController" customModule="Gojira_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="center" layout="vertical" id="Nux-AR-fRF">
+                            <items>
+                                <label width="100" alignment="center" text="Complication refresh" textAlignment="center" numberOfLines="0" id="Snk-AY-ZKv"/>
+                                <picker width="1" height="100" alignment="left" indicatorMode="shownWhileFocused" id="esS-lB-IYj">
+                                    <connections>
+                                        <action selector="intervalPickerChanged:" destination="wJF-oy-rDj" id="Vck-Gc-fjh"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="intervalPicker" destination="esS-lB-IYj" id="iPG-qo-uvi"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="553" y="347"/>
         </scene>

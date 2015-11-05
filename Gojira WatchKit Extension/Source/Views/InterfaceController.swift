@@ -73,6 +73,8 @@ extension InterfaceController: DataServiceDelegate {
         switch type {
         case .Query:
             break
+        case .Refresh:
+            break
         case .Title:
             guard let value = value as? String else {
                 break

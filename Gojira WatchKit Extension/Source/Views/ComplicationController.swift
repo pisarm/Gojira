@@ -34,7 +34,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         let now = NSDate()
         var title = "No data"
-        var total = 0
+        var total = -1
 
         if let titleString = DataService.sharedInstance.title,
             totalValue = DataService.sharedInstance.total {
@@ -73,7 +73,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Update Scheduling
 
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        handler(NSDate(timeIntervalSinceNow: 666))
+        let refresh = DataService.sharedInstance.refresh.rawValue
+        handler(NSDate(timeIntervalSinceNow: refresh))
     }
 
     func requestedUpdateDidBegin() {

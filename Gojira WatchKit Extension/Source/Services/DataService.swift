@@ -13,8 +13,35 @@ protocol DataServiceDelegate {
     func dataUpdated<T>(type: DataType, value: T)
 }
 
+enum Minutes: Double {
+    case Ten = 600
+    case Twenty = 1200
+    case Thirty = 1800
+    case Fourty = 2400
+    case Fifty = 3000
+    case Sixty = 3600
+
+    var description: String {
+        switch self {
+        case .Ten:
+            return "10 mins"
+        case .Twenty:
+            return "20 mins"
+        case .Thirty:
+            return "30 mins"
+        case .Fourty:
+            return "40 mins"
+        case .Fifty:
+            return "50 mins"
+        case .Sixty:
+            return "60 mins"
+        }
+    }
+}
+
 enum DataType: String {
     case Query
+    case Refresh
     case Title
     case Total
 }
@@ -33,6 +60,20 @@ final class DataService {
             if let value = newValue {
                 self.notifyDelegates(.Query, value: value)
             }
+        }
+    }
+
+    var refresh: Minutes {
+        get {
+            guard let value = Minutes(rawValue: self.defaults.doubleForKey(DataType.Refresh.rawValue)) else {
+                return .Ten
+            }
+
+            return value
+        }
+        set {
+            self.defaults.setDouble(newValue.rawValue, forKey: DataType.Refresh.rawValue)
+            self.notifyDelegates(.Refresh, value: newValue)
         }
     }
 
@@ -93,16 +134,15 @@ final class DataService {
                 return
             }
             query = value
+        case .Refresh:
+            break
         case .Title:
             guard let value = value as? String else {
                 return
             }
             title = value
         case .Total:
-            guard let value = value as? Int else {
-                return
-            }
-            total = value
+            break
         }
     }
 

@@ -151,6 +151,7 @@
 		E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		E47E700E1BE6BAB400B1E5D2 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		E47E700F1BE6BAB400B1E5D2 /* WatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
+		E4DA494F1BEA828F0071D104 /* Gojira.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Gojira.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E458F3B51BE7EEA500E3BEA0 /* Source */,
+				E4DA494F1BEA828F0071D104 /* Gojira.playground */,
 			);
 			path = "Gojira Shared";
 			sourceTree = "<group>";
