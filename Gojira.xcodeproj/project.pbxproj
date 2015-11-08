@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E37B71BE96A5B00B614B2 /* SettingsController.swift */; };
+		E425F0DF1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */; };
+		E425F0E01BED4E7C0016F3AE /* TotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0DE1BED4E7C0016F3AE /* TotalData.swift */; };
+		E425F0E31BED51D20016F3AE /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0E21BED51D20016F3AE /* Fetchable.swift */; };
 		E458F3B81BE7EEC000E3BEA0 /* JiraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */; };
 		E458F3B91BE7EF1E00E3BEA0 /* JiraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */; };
 		E458F3BB1BE7F08600E3BEA0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */; };
@@ -37,8 +40,11 @@
 		E47E700B1BE6BAAD00B1E5D2 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70071BE6BAAD00B1E5D2 /* GlanceController.swift */; };
 		E47E700C1BE6BAAD00B1E5D2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70081BE6BAAD00B1E5D2 /* InterfaceController.swift */; };
 		E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */; };
-		E47E70101BE6BAB400B1E5D2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700E1BE6BAB400B1E5D2 /* DataService.swift */; };
-		E47E70111BE6BAB400B1E5D2 /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700F1BE6BAB400B1E5D2 /* WatchService.swift */; };
+		E47E70101BE6BAB400B1E5D2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */; };
+		E47E70111BE6BAB400B1E5D2 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */; };
+		E4B2D50B1BEC919D007F1C4C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */; };
+		E4EB63C11BEC03AE00C85FAE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4EB63BF1BEC03AE00C85FAE /* Model.xcdatamodeld */; };
+		E4EB63D01BEC0C8700C85FAE /* DataFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB63CF1BEC0C8700C85FAE /* DataFacade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +121,9 @@
 
 /* Begin PBXFileReference section */
 		E40E37B71BE96A5B00B614B2 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TotalData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E425F0DE1BED4E7C0016F3AE /* TotalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalData.swift; sourceTree = "<group>"; };
+		E425F0E21BED51D20016F3AE /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiraService.swift; sourceTree = "<group>"; };
 		E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../../Carthage/Build/watchOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		E458F3BE1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = ../../Carthage/Build/watchOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
@@ -149,9 +158,12 @@
 		E47E70071BE6BAAD00B1E5D2 /* GlanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		E47E70081BE6BAAD00B1E5D2 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		E47E700E1BE6BAB400B1E5D2 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		E47E700F1BE6BAB400B1E5D2 /* WatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
+		E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E4DA494F1BEA828F0071D104 /* Gojira.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Gojira.playground; sourceTree = "<group>"; };
+		E4EB63C01BEC03AE00C85FAE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E4EB63CF1BEC0C8700C85FAE /* DataFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFacade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +194,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E425F0E11BED51880016F3AE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E425F0E21BED51D20016F3AE /* Fetchable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E458F3B41BE7EE3E00E3BEA0 /* Gojira Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +214,7 @@
 		E458F3B51BE7EEA500E3BEA0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E425F0E11BED51880016F3AE /* Protocols */,
 				E458F3B61BE7EEB200E3BEA0 /* Services */,
 			);
 			path = Source;
@@ -343,6 +364,7 @@
 				E47E6FFA1BE6BA1700B1E5D2 /* Assets.xcassets */,
 				E458F3C01BE7F10B00E3BEA0 /* Frameworks */,
 				E47E6FFC1BE6BA2D00B1E5D2 /* Info.plist */,
+				E4EB63BF1BEC03AE00C85FAE /* Model.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -350,6 +372,7 @@
 		E47E6FF91BE6B9D700B1E5D2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E4EB63C21BEC044700C85FAE /* Model */,
 				E47E70041BE6BAA600B1E5D2 /* ExtensionDelegate.swift */,
 				E47E70021BE6BA8100B1E5D2 /* Services */,
 				E47E70031BE6BA8700B1E5D2 /* Views */,
@@ -360,8 +383,10 @@
 		E47E70021BE6BA8100B1E5D2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E47E700E1BE6BAB400B1E5D2 /* DataService.swift */,
-				E47E700F1BE6BAB400B1E5D2 /* WatchService.swift */,
+				E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */,
+				E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */,
+				E4EB63CF1BEC0C8700C85FAE /* DataFacade.swift */,
+				E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -376,6 +401,15 @@
 				E40E37B71BE96A5B00B614B2 /* SettingsController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E4EB63C21BEC044700C85FAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */,
+				E425F0DE1BED4E7C0016F3AE /* TotalData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +480,7 @@
 				E47E6FAA1BE6B1CA00B1E5D2 /* Resources */,
 				E458F3BD1BE7F0C600E3BEA0 /* Carthage Copy */,
 				E458F3BC1BE7F09000E3BEA0 /* Carthage dSym */,
+				E425F0E51BF00BB40016F3AE /* Increment Build Number */,
 			);
 			buildRules = (
 			);
@@ -547,6 +582,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		E425F0E51BF00BB40016F3AE /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 		E458F3BD1BE7F0C600E3BEA0 /* Carthage Copy */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -608,15 +657,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E425F0DF1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift in Sources */,
 				E47E700A1BE6BAAD00B1E5D2 /* ComplicationController.swift in Sources */,
-				E47E70101BE6BAB400B1E5D2 /* DataService.swift in Sources */,
+				E47E70101BE6BAB400B1E5D2 /* Preferences.swift in Sources */,
 				E47E70051BE6BAA600B1E5D2 /* ExtensionDelegate.swift in Sources */,
 				E47E700B1BE6BAAD00B1E5D2 /* GlanceController.swift in Sources */,
 				E47E700C1BE6BAAD00B1E5D2 /* InterfaceController.swift in Sources */,
+				E4B2D50B1BEC919D007F1C4C /* CoreDataStack.swift in Sources */,
+				E425F0E31BED51D20016F3AE /* Fetchable.swift in Sources */,
 				E458F3B91BE7EF1E00E3BEA0 /* JiraService.swift in Sources */,
 				E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */,
+				E425F0E01BED4E7C0016F3AE /* TotalData.swift in Sources */,
+				E4EB63D01BEC0C8700C85FAE /* DataFacade.swift in Sources */,
 				E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */,
-				E47E70111BE6BAB400B1E5D2 /* WatchService.swift in Sources */,
+				E4EB63C11BEC03AE00C85FAE /* Model.xcdatamodeld in Sources */,
+				E47E70111BE6BAB400B1E5D2 /* WatchSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,6 +960,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E4EB63BF1BEC03AE00C85FAE /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E4EB63C01BEC03AE00C85FAE /* Model.xcdatamodel */,
+			);
+			currentVersion = E4EB63C01BEC03AE00C85FAE /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E47E6F781BE6B1CA00B1E5D2 /* Project object */;
 }

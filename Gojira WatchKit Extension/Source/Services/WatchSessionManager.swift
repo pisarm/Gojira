@@ -8,8 +8,8 @@
 
 import WatchConnectivity
 
-class WatchService: NSObject, WCSessionDelegate {
-    static let sharedInstance = WatchService()
+class WatchSessionManager: NSObject, WCSessionDelegate {
+    static let sharedInstance = WatchSessionManager()
     private override init() {
         super.init()
     }
@@ -22,9 +22,9 @@ class WatchService: NSObject, WCSessionDelegate {
     }
 }
 
-extension WatchService {
+extension WatchSessionManager {
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         print(applicationContext)
-        DataService.sharedInstance.set(applicationContext)
+//        DataService.sharedInstance.set(applicationContext)
     }
 }

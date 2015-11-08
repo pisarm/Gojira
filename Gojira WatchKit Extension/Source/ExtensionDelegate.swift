@@ -10,7 +10,7 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidFinishLaunching() {
-        WatchService.sharedInstance.startSession()
+        WatchSessionManager.sharedInstance.startSession()
     }
 
     func applicationDidBecomeActive() {

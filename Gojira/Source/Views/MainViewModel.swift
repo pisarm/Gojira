@@ -23,13 +23,13 @@ struct MainViewModel {
     let viewTitle = "Gojira!"
 
     func refreshTotal() {
-        guard let query = DataService.sharedInstance.observableQuery.value else {
+        guard let _ = DataService.sharedInstance.observableQuery.value else {
             return
         }
 
-        JiraService.sharedInstance.refreshTotal(query) {
-            DataService.sharedInstance.observableTotal.value = $0
-            DataService.sharedInstance.observableLastRefresh.value = NSDate()
-        }
+//        JiraService.sharedInstance.refreshTotal(query) {
+//            DataService.sharedInstance.observableTotal.value = $0
+//            DataService.sharedInstance.observableLastRefresh.value = NSDate()
+//        }
     }
 }

@@ -10,18 +10,28 @@ import ClockKit
 import WatchKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
-
     // MARK: - Timeline Configuration
-
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
-        handler(.None)
+        handler([.None])
     }
 
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
+        //        guard let allTotalData = DataFacade.sharedInstance.allTotalData(), totalData = allTotalData.first else {
+        //            handler(nil)
+        //            return
+        //        }
+        //
+        //        handler(NSDate(timeIntervalSince1970: totalData.created))
         handler(nil)
     }
 
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
+        //        guard let allTotalData = DataFacade.sharedInstance.allTotalData(), totalData = allTotalData.last else {
+        //            handler(nil)
+        //            return
+        //        }
+        //
+        //        handler(NSDate(timeIntervalSince1970: totalData.created))
         handler(nil)
     }
 
@@ -32,36 +42,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
 
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
-        let now = NSDate()
-        var title = "No data"
-        var total = -1
-
-        if let titleString = DataService.sharedInstance.title,
-            totalValue = DataService.sharedInstance.total {
-                title = titleString
-                total = totalValue
+        guard let totalData = DataFacade.sharedInstance.newestTotalData() else {
+            handler(nil)
+            return
         }
 
-        var entry: CLKComplicationTimelineEntry?
-
-        if complication.family == .ModularSmall {
-            let textTemplate = CLKComplicationTemplateModularSmallSimpleText()
-            textTemplate.textProvider = CLKSimpleTextProvider(text: "\(total)", shortText: "\(total)")
-
-            entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: textTemplate)
-        } else if complication.family == .ModularLarge {
-            let textTemplate = CLKComplicationTemplateModularLargeTallBody()
-            textTemplate.headerTextProvider = CLKSimpleTextProvider(text: title)
-            textTemplate.bodyTextProvider = CLKSimpleTextProvider(text: "\(total)")
-
-            entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: textTemplate)
-        }
-
-        handler(entry)
+        handler(timelineEntry(totalData, family: complication.family))
     }
 
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
-        // Call the handler with the timeline entries prior to the given date
+        //        if let allTotalData = DataFacade.sharedInstance.allTotalData() {
+        //            let entries = allTotalData
+        //                .filter { NSDate(timeIntervalSince1970: $0.created).compare(date) == .OrderedDescending }
+        //                .map { totalData -> CLKComplicationTimelineEntry in
+        //                    return self.timelineEntry(totalData, family: complication.family)!
+        //            }
+        //            handler(entries)
+        //        } else {
+        //            handler(nil)
+        //        }
         handler(nil)
     }
 
@@ -70,10 +69,55 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(nil)
     }
 
-    // MARK: - Update Scheduling
+    func timelineEntry(totalData: TotalData, family: CLKComplicationFamily) -> CLKComplicationTimelineEntry? {
+        let titleString = DataFacade.sharedInstance.title
+        var totalString = ""
 
+        let diff = totalData.total - totalData.oldTotal
+        totalString = "\(totalData.total)"
+        if totalData.total > totalData.oldTotal {
+            totalString += " (+\(diff))"
+        } else if totalData.total < totalData.oldTotal {
+            totalString += " (\(diff))"
+        }
+
+        switch family {
+        case .CircularSmall:
+            let textTemplate = CLKComplicationTemplateCircularSmallSimpleText()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: totalString)
+
+            return CLKComplicationTimelineEntry(date: NSDate(timeIntervalSince1970: totalData.created), complicationTemplate: textTemplate)
+        case .ModularLarge:
+            let textTemplate = CLKComplicationTemplateModularLargeTallBody()
+            textTemplate.headerTextProvider = CLKSimpleTextProvider(text: titleString)
+            textTemplate.bodyTextProvider = CLKSimpleTextProvider(text: totalString)
+
+            return CLKComplicationTimelineEntry(date: NSDate(timeIntervalSince1970: totalData.created), complicationTemplate: textTemplate)
+        case .ModularSmall:
+            let textTemplate = CLKComplicationTemplateModularSmallSimpleText()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: totalString, shortText: totalString)
+
+            return CLKComplicationTimelineEntry(date: NSDate(timeIntervalSince1970: totalData.created), complicationTemplate: textTemplate)
+        case .UtilitarianLarge:
+            let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: "\(titleString) \(totalString)")
+
+            return CLKComplicationTimelineEntry(date: NSDate(timeIntervalSince1970: totalData.created), complicationTemplate: textTemplate)
+        case .UtilitarianSmall:
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: totalString)
+
+            return CLKComplicationTimelineEntry(date: NSDate(timeIntervalSince1970: totalData.created), complicationTemplate: textTemplate)
+        }
+    }
+
+    // MARK: - Update Scheduling
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        let refresh = DataService.sharedInstance.refresh.rawValue
+        if DataFacade.sharedInstance.countTotalData() == 0 {
+            return handler(NSDate())
+        }
+
+        let refresh = DataFacade.sharedInstance.refresh.rawValue
         handler(NSDate(timeIntervalSinceNow: refresh))
     }
 
@@ -86,24 +130,20 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     func refreshTotal() {
-        guard let query = DataService.sharedInstance.query else {
+        guard let _ = DataFacade.sharedInstance.query else {
             return
         }
 
-        JiraService.sharedInstance.refreshTotal(query) {
-            guard let total = $0 else {
+        DataFacade.sharedInstance.refreshTotal {
+            guard let totalData = $0 else {
                 return
             }
 
-            if let oldTotal = DataService.sharedInstance.total {
-                if total < oldTotal {
-                    WKInterfaceDevice.currentDevice().playHaptic(.DirectionDown)
-                } else if total > oldTotal {
-                    WKInterfaceDevice.currentDevice().playHaptic(.DirectionUp)
-                }
+            if totalData.total > totalData.oldTotal {
+                WKInterfaceDevice.currentDevice().playHaptic(.DirectionUp)
+            } else if totalData.total < totalData.oldTotal {
+                WKInterfaceDevice.currentDevice().playHaptic(.DirectionDown)
             }
-
-            DataService.sharedInstance.total = total
 
             let server = CLKComplicationServer.sharedInstance()
             guard let complications = server.activeComplications
@@ -116,7 +156,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     // MARK: - Placeholder Templates
-
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
         handler(nil)

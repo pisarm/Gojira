@@ -12,8 +12,8 @@ import WatchKit
 class SettingsController: WKInterfaceController {
     @IBOutlet var intervalPicker: WKInterfacePicker!
 
-    private var refresh = DataService.sharedInstance.refresh
-    private var minutes: [Minutes] = [.Ten, .Twenty, .Thirty, .Fourty, .Fifty, .Sixty]
+    private var refresh = DataFacade.sharedInstance.refresh
+    private var minutes: [RefreshType] = [.Ten, .Twenty, .Thirty, .Fourty, .Fifty, .Sixty]
 
     private lazy var pickerItems: [WKPickerItem] = {
         return self.minutes
@@ -45,7 +45,7 @@ class SettingsController: WKInterfaceController {
     }
 
     override func willDisappear() {
-        DataService.sharedInstance.refresh = refresh
+        DataFacade.sharedInstance.refresh = refresh
     }
 
     override func didDeactivate() {

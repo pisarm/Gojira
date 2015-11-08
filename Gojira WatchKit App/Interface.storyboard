@@ -15,7 +15,7 @@
                                 <label alignment="center" text="title" textAlignment="center" numberOfLines="0" id="32w-z0-FmG">
                                     <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
-                                <label alignment="center" text="total" minimumScaleFactor="0.5" id="4JM-A5-sRE">
+                                <label alignment="center" text="total" baselineAdjustment="alignCenters" minimumScaleFactor="0.5" id="4JM-A5-sRE">
                                     <fontDescription key="font" type="system" pointSize="92"/>
                                 </label>
                             </items>
