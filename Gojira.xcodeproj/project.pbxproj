@@ -10,9 +10,6 @@
 		E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E37B71BE96A5B00B614B2 /* SettingsController.swift */; };
 		E425F0DF1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */; };
 		E425F0E01BED4E7C0016F3AE /* TotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0DE1BED4E7C0016F3AE /* TotalData.swift */; };
-		E425F0E31BED51D20016F3AE /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0E21BED51D20016F3AE /* Fetchable.swift */; };
-		E458F3B81BE7EEC000E3BEA0 /* JiraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */; };
-		E458F3B91BE7EF1E00E3BEA0 /* JiraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */; };
 		E458F3BB1BE7F08600E3BEA0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */; };
 		E458F3BF1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM in Carthage dSym */ = {isa = PBXBuildFile; fileRef = E458F3BE1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM */; };
 		E47E6F991BE6B1CA00B1E5D2 /* GojiraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6F981BE6B1CA00B1E5D2 /* GojiraTests.swift */; };
@@ -22,10 +19,8 @@
 		E47E6FD51BE6B46800B1E5D2 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FD31BE6B46800B1E5D2 /* Launch.storyboard */; };
 		E47E6FD61BE6B46800B1E5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FD41BE6B46800B1E5D2 /* Main.storyboard */; };
 		E47E6FD81BE6B49000B1E5D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47E6FD71BE6B49000B1E5D2 /* Assets.xcassets */; };
-		E47E6FDE1BE6B4E200B1E5D2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FDB1BE6B4E200B1E5D2 /* DataService.swift */; };
+		E47E6FDE1BE6B4E200B1E5D2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FDB1BE6B4E200B1E5D2 /* Preferences.swift */; };
 		E47E6FE01BE6B4E200B1E5D2 /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FDD1BE6B4E200B1E5D2 /* WatchService.swift */; };
-		E47E6FE51BE6B4EB00B1E5D2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE11BE6B4EB00B1E5D2 /* MainView.swift */; };
-		E47E6FE61BE6B4EB00B1E5D2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE21BE6B4EB00B1E5D2 /* MainViewModel.swift */; };
 		E47E6FE71BE6B4EB00B1E5D2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE31BE6B4EB00B1E5D2 /* SettingsView.swift */; };
 		E47E6FE81BE6B4EB00B1E5D2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E6FE41BE6B4EB00B1E5D2 /* SettingsViewModel.swift */; };
 		E47E6FEC1BE6B5A500B1E5D2 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E47E6FEB1BE6B5A500B1E5D2 /* Bond.framework */; };
@@ -42,9 +37,20 @@
 		E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */; };
 		E47E70101BE6BAB400B1E5D2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */; };
 		E47E70111BE6BAB400B1E5D2 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */; };
+		E48DB8191BF29B8800E40673 /* Jira.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB92FA1BF1648D00F26BE1 /* Jira.swift */; };
+		E4AB92F91BF1648600F26BE1 /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB92F81BF1648600F26BE1 /* Fetchable.swift */; };
+		E4AB92FB1BF1648D00F26BE1 /* Jira.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB92FA1BF1648D00F26BE1 /* Jira.swift */; };
 		E4B2D50B1BEC919D007F1C4C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */; };
 		E4EB63C11BEC03AE00C85FAE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4EB63BF1BEC03AE00C85FAE /* Model.xcdatamodeld */; };
 		E4EB63D01BEC0C8700C85FAE /* DataFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB63CF1BEC0C8700C85FAE /* DataFacade.swift */; };
+		E4F016621BF12F3300594EA3 /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F016611BF12F3300594EA3 /* SharedConstants.swift */; };
+		E4F016631BF12F3300594EA3 /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F016611BF12F3300594EA3 /* SharedConstants.swift */; };
+		E4F016651BF132AE00594EA3 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F016641BF132AE00594EA3 /* Locksmith.framework */; };
+		E4F016671BF132BE00594EA3 /* Locksmith.framework.dSYM in Carthage dSym */ = {isa = PBXBuildFile; fileRef = E4F016661BF132BE00594EA3 /* Locksmith.framework.dSYM */; };
+		E4F016691BF14BCD00594EA3 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F016681BF14BCD00594EA3 /* Locksmith.framework */; };
+		E4F0166B1BF14C0A00594EA3 /* Locksmith.framework.dSYM in Carthage dSym */ = {isa = PBXBuildFile; fileRef = E4F0166A1BF14C0A00594EA3 /* Locksmith.framework.dSYM */; };
+		E4F0166E1BF161D500594EA3 /* FilterData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F0166C1BF161D500594EA3 /* FilterData+CoreDataProperties.swift */; };
+		E4F0166F1BF161D500594EA3 /* FilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F0166D1BF161D500594EA3 /* FilterData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +84,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				E4F0166B1BF14C0A00594EA3 /* Locksmith.framework.dSYM in Carthage dSym */,
 				E458F3BF1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM in Carthage dSym */,
 			);
 			name = "Carthage dSym";
@@ -112,6 +119,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				E47E6FF01BE6B5B900B1E5D2 /* Bond.framework.dSYM in Carthage dSym */,
+				E4F016671BF132BE00594EA3 /* Locksmith.framework.dSYM in Carthage dSym */,
 				E47E6FF21BE6B5C300B1E5D2 /* SwiftyJSON.framework.dSYM in Carthage dSym */,
 			);
 			name = "Carthage dSym";
@@ -123,8 +131,6 @@
 		E40E37B71BE96A5B00B614B2 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TotalData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E425F0DE1BED4E7C0016F3AE /* TotalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalData.swift; sourceTree = "<group>"; };
-		E425F0E21BED51D20016F3AE /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
-		E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiraService.swift; sourceTree = "<group>"; };
 		E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../../Carthage/Build/watchOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		E458F3BE1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = ../../Carthage/Build/watchOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		E47E6F801BE6B1CA00B1E5D2 /* Gojira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gojira.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,10 +144,8 @@
 		E47E6FD31BE6B46800B1E5D2 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		E47E6FD41BE6B46800B1E5D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E47E6FD71BE6B49000B1E5D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E47E6FDB1BE6B4E200B1E5D2 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		E47E6FDB1BE6B4E200B1E5D2 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E47E6FDD1BE6B4E200B1E5D2 /* WatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
-		E47E6FE11BE6B4EB00B1E5D2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		E47E6FE21BE6B4EB00B1E5D2 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E47E6FE31BE6B4EB00B1E5D2 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E47E6FE41BE6B4EB00B1E5D2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E47E6FEB1BE6B5A500B1E5D2 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = ../../Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
@@ -160,10 +164,19 @@
 		E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		E4AB92F81BF1648600F26BE1 /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
+		E4AB92FA1BF1648D00F26BE1 /* Jira.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jira.swift; sourceTree = "<group>"; };
 		E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E4DA494F1BEA828F0071D104 /* Gojira.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Gojira.playground; sourceTree = "<group>"; };
 		E4EB63C01BEC03AE00C85FAE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E4EB63CF1BEC0C8700C85FAE /* DataFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFacade.swift; sourceTree = "<group>"; };
+		E4F016611BF12F3300594EA3 /* SharedConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
+		E4F016641BF132AE00594EA3 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../../Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
+		E4F016661BF132BE00594EA3 /* Locksmith.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Locksmith.framework.dSYM; path = ../../Carthage/Build/iOS/Locksmith.framework.dSYM; sourceTree = "<group>"; };
+		E4F016681BF14BCD00594EA3 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../../Carthage/Build/watchOS/Locksmith.framework; sourceTree = "<group>"; };
+		E4F0166A1BF14C0A00594EA3 /* Locksmith.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Locksmith.framework.dSYM; path = ../../Carthage/Build/watchOS/Locksmith.framework.dSYM; sourceTree = "<group>"; };
+		E4F0166C1BF161D500594EA3 /* FilterData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FilterData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E4F0166D1BF161D500594EA3 /* FilterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47E6FEC1BE6B5A500B1E5D2 /* Bond.framework in Frameworks */,
+				E4F016651BF132AE00594EA3 /* Locksmith.framework in Frameworks */,
 				E47E6FEE1BE6B5A800B1E5D2 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F016691BF14BCD00594EA3 /* Locksmith.framework in Frameworks */,
 				E458F3BB1BE7F08600E3BEA0 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,19 +209,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E425F0E11BED51880016F3AE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				E425F0E21BED51D20016F3AE /* Fetchable.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		E458F3B41BE7EE3E00E3BEA0 /* Gojira Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E458F3B51BE7EEA500E3BEA0 /* Source */,
 				E4DA494F1BEA828F0071D104 /* Gojira.playground */,
+				E458F3B51BE7EEA500E3BEA0 /* Source */,
 			);
 			path = "Gojira Shared";
 			sourceTree = "<group>";
@@ -214,23 +221,16 @@
 		E458F3B51BE7EEA500E3BEA0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E425F0E11BED51880016F3AE /* Protocols */,
-				E458F3B61BE7EEB200E3BEA0 /* Services */,
+				E4F016611BF12F3300594EA3 /* SharedConstants.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		E458F3B61BE7EEB200E3BEA0 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				E458F3B71BE7EEC000E3BEA0 /* JiraService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		E458F3C01BE7F10B00E3BEA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4F016681BF14BCD00594EA3 /* Locksmith.framework */,
+				E4F0166A1BF14C0A00594EA3 /* Locksmith.framework.dSYM */,
 				E458F3BA1BE7F08600E3BEA0 /* SwiftyJSON.framework */,
 				E458F3BE1BE7F10200E3BEA0 /* SwiftyJSON.framework.dSYM */,
 			);
@@ -330,7 +330,7 @@
 		E47E6FD91BE6B4AA00B1E5D2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E47E6FDB1BE6B4E200B1E5D2 /* DataService.swift */,
+				E47E6FDB1BE6B4E200B1E5D2 /* Preferences.swift */,
 				E47E6FDD1BE6B4E200B1E5D2 /* WatchService.swift */,
 			);
 			path = Services;
@@ -339,8 +339,6 @@
 		E47E6FDA1BE6B4B000B1E5D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E47E6FE11BE6B4EB00B1E5D2 /* MainView.swift */,
-				E47E6FE21BE6B4EB00B1E5D2 /* MainViewModel.swift */,
 				E47E6FE31BE6B4EB00B1E5D2 /* SettingsView.swift */,
 				E47E6FE41BE6B4EB00B1E5D2 /* SettingsViewModel.swift */,
 			);
@@ -352,6 +350,8 @@
 			children = (
 				E47E6FEB1BE6B5A500B1E5D2 /* Bond.framework */,
 				E47E6FEF1BE6B5B900B1E5D2 /* Bond.framework.dSYM */,
+				E4F016641BF132AE00594EA3 /* Locksmith.framework */,
+				E4F016661BF132BE00594EA3 /* Locksmith.framework.dSYM */,
 				E47E6FED1BE6B5A800B1E5D2 /* SwiftyJSON.framework */,
 				E47E6FF11BE6B5C300B1E5D2 /* SwiftyJSON.framework.dSYM */,
 			);
@@ -372,8 +372,9 @@
 		E47E6FF91BE6B9D700B1E5D2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E4EB63C21BEC044700C85FAE /* Model */,
 				E47E70041BE6BAA600B1E5D2 /* ExtensionDelegate.swift */,
+				E4EB63C21BEC044700C85FAE /* Model */,
+				E4F016701BF163F700594EA3 /* Protocols */,
 				E47E70021BE6BA8100B1E5D2 /* Services */,
 				E47E70031BE6BA8700B1E5D2 /* Views */,
 			);
@@ -383,10 +384,11 @@
 		E47E70021BE6BA8100B1E5D2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */,
+				E4EB63CF1BEC0C8700C85FAE /* DataFacade.swift */,
+				E4AB92FA1BF1648D00F26BE1 /* Jira.swift */,
 				E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */,
 				E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */,
-				E4EB63CF1BEC0C8700C85FAE /* DataFacade.swift */,
-				E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -406,10 +408,20 @@
 		E4EB63C21BEC044700C85FAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */,
+				E4F0166D1BF161D500594EA3 /* FilterData.swift */,
+				E4F0166C1BF161D500594EA3 /* FilterData+CoreDataProperties.swift */,
 				E425F0DE1BED4E7C0016F3AE /* TotalData.swift */,
+				E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E4F016701BF163F700594EA3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E4AB92F81BF1648600F26BE1 /* Fetchable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,7 +518,7 @@
 						DevelopmentTeam = W876623E2K;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -603,6 +615,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/watchOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/Locksmith.framework",
 			);
 			name = "Carthage Copy";
 			outputPaths = (
@@ -619,6 +632,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Locksmith.framework",
 			);
 			name = "Carthage Copy";
 			outputPaths = (
@@ -635,12 +649,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47E6FF51BE6B60F00B1E5D2 /* AppDelegate.swift in Sources */,
-				E47E6FDE1BE6B4E200B1E5D2 /* DataService.swift in Sources */,
-				E458F3B81BE7EEC000E3BEA0 /* JiraService.swift in Sources */,
-				E47E6FE51BE6B4EB00B1E5D2 /* MainView.swift in Sources */,
-				E47E6FE61BE6B4EB00B1E5D2 /* MainViewModel.swift in Sources */,
+				E48DB8191BF29B8800E40673 /* Jira.swift in Sources */,
+				E47E6FDE1BE6B4E200B1E5D2 /* Preferences.swift in Sources */,
 				E47E6FE71BE6B4EB00B1E5D2 /* SettingsView.swift in Sources */,
 				E47E6FE81BE6B4EB00B1E5D2 /* SettingsViewModel.swift in Sources */,
+				E4F016621BF12F3300594EA3 /* SharedConstants.swift in Sources */,
 				E47E6FE01BE6B4E200B1E5D2 /* WatchService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,20 +670,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E425F0DF1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift in Sources */,
 				E47E700A1BE6BAAD00B1E5D2 /* ComplicationController.swift in Sources */,
-				E47E70101BE6BAB400B1E5D2 /* Preferences.swift in Sources */,
+				E4B2D50B1BEC919D007F1C4C /* CoreDataStack.swift in Sources */,
+				E4EB63D01BEC0C8700C85FAE /* DataFacade.swift in Sources */,
 				E47E70051BE6BAA600B1E5D2 /* ExtensionDelegate.swift in Sources */,
+				E4AB92F91BF1648600F26BE1 /* Fetchable.swift in Sources */,
+				E4F0166E1BF161D500594EA3 /* FilterData+CoreDataProperties.swift in Sources */,
+				E4F0166F1BF161D500594EA3 /* FilterData.swift in Sources */,
 				E47E700B1BE6BAAD00B1E5D2 /* GlanceController.swift in Sources */,
 				E47E700C1BE6BAAD00B1E5D2 /* InterfaceController.swift in Sources */,
-				E4B2D50B1BEC919D007F1C4C /* CoreDataStack.swift in Sources */,
-				E425F0E31BED51D20016F3AE /* Fetchable.swift in Sources */,
-				E458F3B91BE7EF1E00E3BEA0 /* JiraService.swift in Sources */,
-				E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */,
-				E425F0E01BED4E7C0016F3AE /* TotalData.swift in Sources */,
-				E4EB63D01BEC0C8700C85FAE /* DataFacade.swift in Sources */,
-				E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */,
+				E4AB92FB1BF1648D00F26BE1 /* Jira.swift in Sources */,
 				E4EB63C11BEC03AE00C85FAE /* Model.xcdatamodeld in Sources */,
+				E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */,
+				E47E70101BE6BAB400B1E5D2 /* Preferences.swift in Sources */,
+				E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */,
+				E4F016631BF12F3300594EA3 /* SharedConstants.swift in Sources */,
+				E425F0DF1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift in Sources */,
+				E425F0E01BED4E7C0016F3AE /* TotalData.swift in Sources */,
 				E47E70111BE6BAB400B1E5D2 /* WatchSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,24 +6,18 @@
 //  Copyright © 2015 pisarm.dk. All rights reserved.
 //
 
-
 import Foundation
+import SwiftyJSON
 
 final class DataFacade {
-    static let sharedInstance = DataFacade()
-
-    private let stack = CoreDataStack()
-    private let jira = JiraService()
-    private let preferences = Preferences()
-
-    var query: String? {
-        get {
-            return preferences.query
+    var initialized: Bool {
+        guard let _ = Preferences.sharedInstance.username, _ = Preferences.sharedInstance.password, _ = Preferences.sharedInstance.jiraURL else {
+            return false
         }
-        set {
-            preferences.query = newValue
-        }
+
+        return true
     }
+
     var refresh: RefreshType {
         get {
             return preferences.refresh
@@ -32,6 +26,7 @@ final class DataFacade {
             preferences.refresh = newValue
         }
     }
+
     var title: String {
         get {
             return preferences.title
@@ -41,30 +36,68 @@ final class DataFacade {
         }
     }
 
-    //MARK: TotalData
+    static let sharedInstance = DataFacade()
 
-    func refreshTotal(completion: (totalData: TotalData?) -> Void) {
-        jira.refreshTotal(preferences.query) { total in
-            guard let total = total else {
-                completion(totalData: nil)
+    private let stack = CoreDataStack()
+    private let jira = Jira()
+    private let preferences = Preferences()
+
+    //MARK: FilterData
+    func fetchFilterData(completion: () -> Void) {
+        guard let
+            jiraURL = preferences.jiraURL,
+            username = preferences.username,
+            password = preferences.password
+            else {
+                completion()
+                return
+        }
+
+        let basicAuth = BasicAuth(username: username, password: password)
+
+        jira.fetchFilterData(jiraURL, basicAuth: basicAuth) {
+            guard let data = $0 else {
                 return
             }
 
-            dispatch_async(dispatch_get_main_queue()) {
-                let oldTotalData = self.newestTotalData()
+            let json = JSON(data: data)
 
-                let totalData = TotalData(managedObjectContext: self.stack.context)
-                totalData.total = Int16(total)
-                totalData.created = NSDate().timeIntervalSince1970
-
-                if let oldTotalData = oldTotalData {
-                    totalData.oldTotal = oldTotalData.total
-                }
-                self.stack.saveContext()
-
-                completion(totalData: totalData)
+            for (_, subJSON) : (String, JSON) in json {
+                FilterData.from(subJSON, context: self.stack.context)
             }
+            self.stack.saveContext()
+
+            //TODO: Return filterData array or signal done??
+
         }
+    }
+
+    //MARK: TotalData
+
+
+    func fetchTotal(completion: (totalData: TotalData?) -> Void) {
+
+//        jira.refreshTotal(preferences.query) { total in
+//            guard let total = total else {
+//                completion(totalData: nil)
+//                return
+//            }
+//
+//            dispatch_async(dispatch_get_main_queue()) {
+//                let oldTotalData = self.newestTotalData()
+//
+//                let totalData = TotalData(managedObjectContext: self.stack.context)
+//                totalData.total = Int16(total)
+//                totalData.created = NSDate().timeIntervalSince1970
+//
+//                if let oldTotalData = oldTotalData {
+//                    totalData.oldTotal = oldTotalData.total
+//                }
+//                self.stack.saveContext()
+//
+//                completion(totalData: totalData)
+//            }
+//        }
     }
 
     func newestTotalData() -> TotalData? {

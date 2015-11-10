@@ -10,12 +10,19 @@ import Bond
 import Foundation
 
 struct SettingsViewModel {
-    var observableTitle: Observable<String?> {
-        return DataService.sharedInstance.observableTitle
-    }
-    var observableQuery: Observable<String?> {
-        return DataService.sharedInstance.observableQuery
+    //MARK: Observables
+    var observableUsername: Observable<String?> {
+        return Preferences.sharedInstance.observableUsername
     }
 
-    let viewTitle = "Settings"
+    var observablePassword: Observable<String?> {
+        return Preferences.sharedInstance.observablePassword
+    }
+
+    var observableJiraURL: Observable<String?> {
+        return Preferences.sharedInstance.observableJiraURL
+    }
+
+    //MARK: Properties
+    let viewTitle = "Gojira"
 }

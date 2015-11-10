@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 final class SettingsView: UIViewController {
-    @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var queryField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var jiraURLField: UITextField!
 
     private let viewModel = SettingsViewModel()
 
@@ -24,7 +25,8 @@ final class SettingsView: UIViewController {
     }
 
     private func setupBonds() {
-        viewModel.observableTitle.bidirectionalBindTo(titleField.bnd_text)
-        viewModel.observableQuery.bidirectionalBindTo(queryField.bnd_text)
+        viewModel.observableUsername.bidirectionalBindTo(usernameField.bnd_text)
+        viewModel.observablePassword.bidirectionalBindTo(passwordField.bnd_text)
+        viewModel.observableJiraURL.bidirectionalBindTo(jiraURLField.bnd_text)
     }
 }

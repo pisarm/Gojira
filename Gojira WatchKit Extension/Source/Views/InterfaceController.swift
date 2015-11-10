@@ -32,10 +32,16 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-    @IBAction func actionRefresh() {
-        DataFacade.sharedInstance.refreshTotal {
-            self.refreshLabels($0)
+    @IBAction func actionFilters() {
+        DataFacade.sharedInstance.fetchFilterData { () -> Void in
+            
         }
+    }
+
+    @IBAction func actionRefresh() {
+//        DataFacade.sharedInstance.refreshTotal {
+//            self.refreshLabels($0)
+//        }
     }
 
     @IBAction func actionSettings() {

@@ -24,7 +24,10 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
 
 extension WatchSessionManager {
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        print(applicationContext)
-//        DataService.sharedInstance.set(applicationContext)
+        for (key, value) in applicationContext {
+            if let contextKey = ContextType(rawValue: key) {
+                Preferences.sharedInstance.setPreference(value, forKey: contextKey)
+            }
+        }
     }
 }

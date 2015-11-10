@@ -1,3 +1,4 @@
+github "matthewpalmer/Locksmith"
 github "SwiftBond/Bond"
 github "SwiftyJSON/SwiftyJSON"
 

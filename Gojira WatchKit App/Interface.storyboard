@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
@@ -23,14 +23,19 @@
                     </items>
                     <menu key="menu" id="uyM-k6-Nca">
                         <items>
-                            <menuItem title="Refresh" icon="resume" id="sfU-9s-ILr">
+                            <menuItem title="Filters" icon="repeat" id="1z2-Nk-wQH">
                                 <connections>
-                                    <action selector="actionRefresh" destination="AgC-eL-Hgc" id="Frx-t6-4sd"/>
+                                    <action selector="actionFilters" destination="AgC-eL-Hgc" id="fz9-lx-da4"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Settings" icon="shuffle" id="y4L-12-9xW">
                                 <connections>
                                     <action selector="actionSettings" destination="AgC-eL-Hgc" id="qt6-We-2mj"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Refresh" icon="resume" id="sfU-9s-ILr">
+                                <connections>
+                                    <action selector="actionRefresh" destination="AgC-eL-Hgc" id="Frx-t6-4sd"/>
                                 </connections>
                             </menuItem>
                         </items>

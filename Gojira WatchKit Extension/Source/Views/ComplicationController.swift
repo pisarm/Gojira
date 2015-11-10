@@ -130,29 +130,29 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     func refreshTotal() {
-        guard let _ = DataFacade.sharedInstance.query else {
-            return
-        }
-
-        DataFacade.sharedInstance.refreshTotal {
-            guard let totalData = $0 else {
-                return
-            }
-
-            if totalData.total > totalData.oldTotal {
-                WKInterfaceDevice.currentDevice().playHaptic(.DirectionUp)
-            } else if totalData.total < totalData.oldTotal {
-                WKInterfaceDevice.currentDevice().playHaptic(.DirectionDown)
-            }
-
-            let server = CLKComplicationServer.sharedInstance()
-            guard let complications = server.activeComplications
-                where complications.count > 0 else {
-                    return
-            }
-
-            complications.forEach { server.reloadTimelineForComplication($0) }
-        }
+//        guard let _ = DataFacade.sharedInstance.query else {
+//            return
+//        }
+//
+//        DataFacade.sharedInstance.refreshTotal {
+//            guard let totalData = $0 else {
+//                return
+//            }
+//
+//            if totalData.total > totalData.oldTotal {
+//                WKInterfaceDevice.currentDevice().playHaptic(.DirectionUp)
+//            } else if totalData.total < totalData.oldTotal {
+//                WKInterfaceDevice.currentDevice().playHaptic(.DirectionDown)
+//            }
+//
+//            let server = CLKComplicationServer.sharedInstance()
+//            guard let complications = server.activeComplications
+//                where complications.count > 0 else {
+//                    return
+//            }
+//
+//            complications.forEach { server.reloadTimelineForComplication($0) }
+//        }
     }
 
     // MARK: - Placeholder Templates

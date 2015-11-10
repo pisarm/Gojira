@@ -10,7 +10,6 @@ import Bond
 import WatchConnectivity
 
 class WatchService: NSObject, WCSessionDelegate {
-    static let sharedInstance = WatchService()
     private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
     private var validSession: WCSession? {
         if let session = session where session.paired && session.watchAppInstalled {
@@ -18,6 +17,8 @@ class WatchService: NSObject, WCSessionDelegate {
         }
         return nil
     }
+
+    static let sharedInstance = WatchService()
 
     private override init() {
         super.init()
@@ -27,20 +28,33 @@ class WatchService: NSObject, WCSessionDelegate {
         session?.delegate = self
         session?.activateSession()
 
-        DataService.sharedInstance.observableQuery
+        setupBonds()
+    }
+
+    private func setupBonds() {
+        Preferences.sharedInstance.observableUsername
             .observe {
-                if let query = $0{
+                if let username = $0 {
                     do {
-                        try self.updateApplicationContext(["Query" : query])
+                        try self.updateApplicationContext( [ContextType.Username.rawValue : username] )
                     } catch { print(error) }
                 }
         }
 
-        DataService.sharedInstance.observableTitle
+        Preferences.sharedInstance.observablePassword
             .observe {
-                if let title = $0 {
+                if let password = $0 {
                     do {
-                        try self.updateApplicationContext(["Title": title])
+                        try self.updateApplicationContext( [ContextType.Password.rawValue : password] )
+                    } catch { print(error) }
+                }
+        }
+
+        Preferences.sharedInstance.observableJiraURL
+            .observe {
+                if let jiraURL = $0 {
+                    do {
+                        try self.updateApplicationContext( [ContextType.JiraURL.rawValue : jiraURL] )
                     } catch { print(error) }
                 }
         }
@@ -48,14 +62,9 @@ class WatchService: NSObject, WCSessionDelegate {
 }
 
 extension WatchService {
-    // Sender
     func updateApplicationContext(applicationContext: [String : AnyObject]) throws {
         if let session = validSession {
             try session.updateApplicationContext(applicationContext)
         }
-    }
-
-    // Receiver
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
     }
 }

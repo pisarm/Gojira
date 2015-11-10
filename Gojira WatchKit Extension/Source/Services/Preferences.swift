@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Locksmith
 
 enum RefreshType: Double {
     case Ten = 600
@@ -34,52 +35,89 @@ enum RefreshType: Double {
     }
 }
 
-enum PreferencesType: String {
-    case Query
+private enum PreferenceType: String {
     case Refresh
     case Title
 }
 
 final class Preferences {
-    var query: String? {
-        get {
-            return "issuetype = Bug AND status not in (Closed, Resolved, Impeeded) AND labels = iOS AND Product != mPOS ORDER BY priority, createdDate DESC"
-//            guard let string = self.defaults.objectForKey(PreferencesType.Query.rawValue) as? String else {
-//                return nil
-//            }
-//
-//            return string
-        }
-        set {
-            self.defaults.setObject(newValue, forKey: PreferencesType.Query.rawValue)
-        }
+    //MARK: Stored in keychain
+    var username: String? {
+            guard let value = preference(forKey: .Username) as? String else {
+                return nil
+            }
+
+            return value
     }
 
+    var password: String? {
+            guard let value = preference(forKey: .Password) as? String else {
+                return nil
+            }
+
+            return value
+    }
+
+    var jiraURL: String? {
+            guard let value = preference(forKey: .JiraURL) as? String else {
+                return nil
+            }
+
+            return value
+    }
+
+    //MARK: Stored using NSUserDefaults
     var refresh: RefreshType {
         get {
-            guard let value = RefreshType(rawValue: self.defaults.doubleForKey(PreferencesType.Refresh.rawValue)) else {
+            guard let value = RefreshType(rawValue: self.defaults.doubleForKey(PreferenceType.Refresh.rawValue)) else {
                 return .Ten
             }
 
             return value
         }
         set {
-            self.defaults.setDouble(newValue.rawValue, forKey: PreferencesType.Refresh.rawValue)
+            self.defaults.setDouble(newValue.rawValue, forKey: PreferenceType.Refresh.rawValue)
         }
     }
 
     var title: String {
         get {
-            guard let string = self.defaults.objectForKey(PreferencesType.Title.rawValue) as? String else {
+            guard let string = self.defaults.objectForKey(PreferenceType.Title.rawValue) as? String else {
                 return "Issues"
             }
 
             return string
         }
         set {
-            self.defaults.setObject(newValue, forKey: PreferencesType.Title.rawValue)
+            self.defaults.setObject(newValue, forKey: PreferenceType.Title.rawValue)
         }
     }
 
+
+    //MARK: Properties
+    static let sharedInstance = Preferences()
+    private let userAccount = "dk.pisarm.gojira-watch.preferences"
+    private var preferenceData: [String : AnyObject] = [:]
     private let defaults = NSUserDefaults.standardUserDefaults()
+
+    //MARK: Set and get
+    func setPreference(value: AnyObject?, forKey key: ContextType) {
+        guard let value = value else {
+            return
+        }
+
+        preferenceData[key.rawValue] = value
+
+        do {
+            try Locksmith.updateData(preferenceData, forUserAccount: userAccount)
+        } catch { print(error) }
+    }
+
+    private func preference(forKey key: ContextType) -> AnyObject? {
+        guard let preference = preferenceData[key.rawValue] else {
+            return nil
+        }
+        
+        return preference
+    }
 }
