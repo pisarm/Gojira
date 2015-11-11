@@ -33,9 +33,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func actionFilters() {
-        DataFacade.sharedInstance.fetchFilterData { () -> Void in
-            
-        }
+        presentControllerWithName("FiltersController", context: nil)
     }
 
     @IBAction func actionRefresh() {

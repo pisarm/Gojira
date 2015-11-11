@@ -69,7 +69,45 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="553" y="347"/>
+            <point key="canvasLocation" x="553" y="171"/>
+        </scene>
+        <!--FiltersController-->
+        <scene sceneID="iu2-YO-Gj4">
+            <objects>
+                <controller identifier="FiltersController" id="8Lv-dI-GWL" customClass="FiltersController" customModule="Gojira_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="gy1-Hb-ueS">
+                            <items>
+                                <tableRow identifier="FilterRow" id="B4f-S9-whK" customClass="FilterRow" customModule="Gojira_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" animationDuration="1" layout="vertical" id="K0b-Yl-gD1">
+                                        <items>
+                                            <label width="1" alignment="center" text="filter" textAlignment="center" numberOfLines="0" id="VVG-cO-rrH">
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="VVG-cO-rrH" id="hzJ-V6-KJi"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <menu key="menu" id="OkM-m5-t5q">
+                        <items>
+                            <menuItem title="Refresh" icon="resume" id="oX9-Vv-HTA">
+                                <connections>
+                                    <action selector="actionRefresh" destination="8Lv-dI-GWL" id="mAq-pY-cW7"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="table" destination="gy1-Hb-ueS" id="Nx4-Yl-DiH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="553" y="440"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

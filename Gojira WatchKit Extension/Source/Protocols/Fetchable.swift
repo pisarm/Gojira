@@ -31,6 +31,11 @@ extension Fetchable where Self: NSManagedObject {
         return try self.fetchUsingPredicate(nil, sortDescriptors: nil, context: context)
     }
 
+    static func delete(context: NSManagedObjectContext) throws {
+        let objects = try fetch(context)
+        objects.forEach {context.deleteObject($0) }
+    }
+
     static func fetchUsingPredicate(predicate: NSPredicate?, context: NSManagedObjectContext) throws -> Array<Self> {
         return try self.fetchUsingPredicate(predicate, sortDescriptors: nil, context: context)
     }
