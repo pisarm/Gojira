@@ -25,4 +25,10 @@ struct SettingsViewModel {
 
     //MARK: Properties
     let viewTitle = "Gojira"
+
+    //MARK: -
+
+    func sendConfigAction() {
+        WatchService.sharedInstance.sendConfiguration()
+    }
 }

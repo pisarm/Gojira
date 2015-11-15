@@ -1,5 +1,5 @@
 //
-//  FilterRowController.swift
+//  FiltersRow.swift
 //  Gojira
 //
 //  Created by Flemming Pedersen on 11/11/15.
@@ -9,6 +9,6 @@
 import Foundation
 import WatchKit
 
-final class FilterRow: NSObject {
+final class FiltersRow: NSObject {
     @IBOutlet var rowLabel: WKInterfaceLabel!
 }

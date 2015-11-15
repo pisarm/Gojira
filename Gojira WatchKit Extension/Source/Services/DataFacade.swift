@@ -11,13 +11,18 @@ import SwiftyJSON
 
 final class DataFacade {
     var initialized: Bool {
-        guard let _ = Preferences.sharedInstance.username, _ = Preferences.sharedInstance.password, _ = Preferences.sharedInstance.jiraURL else {
-            return false
+        guard let
+            _ = Preferences.sharedInstance.username,
+            _ = Preferences.sharedInstance.password,
+            _ = Preferences.sharedInstance.jiraURL
+            else {
+                return false
         }
 
         return true
     }
 
+    //MARK: Preferences
     var refresh: RefreshType {
         get {
             return preferences.refresh
@@ -36,21 +41,67 @@ final class DataFacade {
         }
     }
 
+    var filterId: String? {
+        get {
+            return preferences.filterId
+        }
+        set {
+            preferences.filterId = newValue
+        }
+    }
+
     static let sharedInstance = DataFacade()
 
     private let stack = CoreDataStack()
     private let jira = Jira()
     private let preferences = Preferences()
+}
 
-    //MARK: FilterData
+//MARK: Fetching FilterData
+extension DataFacade {
     func fetchFilterData() -> [FilterData] {
-        guard let filterData = try? FilterData.fetchUsingPredicate(nil, sortDescriptors: nil, context: self.stack.context) else {
+        guard let filterData = try? FilterData.fetch(self.stack.context) else {
             return []
         }
 
         return filterData
     }
 
+    func fetchFilterData(filterId: String) -> FilterData? {
+
+        return nil
+    }
+}
+
+//MARK: Fetching TotalData
+extension DataFacade {
+    func fetchNewestTotalData() -> TotalData? {
+        guard let maybeNewestTotalData = try? TotalData.fetchNewest(self.stack.context), newestTotalData = maybeNewestTotalData else {
+            return nil
+        }
+
+        return newestTotalData
+    }
+
+    func fetchTotalData() -> [TotalData]? {
+        guard let allTotalData = try? TotalData.fetchUsingPredicate(nil, sortDescriptors: [NSSortDescriptor(key: "", ascending: true)], context: self.stack.context) else {
+            return nil
+        }
+
+        return allTotalData
+    }
+
+    func fetchTotalDataCount() -> Int {
+        guard let count = try? TotalData.fetchCount(self.stack.context) else {
+            return 0
+        }
+
+        return count
+    }
+}
+
+//MARK: Refreshing data
+extension DataFacade {
     func refreshFilterData(completion: (filterData: [FilterData]) -> Void) {
         guard let
             jiraURL = preferences.jiraURL,
@@ -87,55 +138,45 @@ final class DataFacade {
         }
     }
 
-    //MARK: TotalData
-
-
-    func fetchTotal(completion: (totalData: TotalData?) -> Void) {
-
-        //        jira.refreshTotal(preferences.query) { total in
-        //            guard let total = total else {
-        //                completion(totalData: nil)
-        //                return
-        //            }
-        //
-        //            dispatch_async(dispatch_get_main_queue()) {
-        //                let oldTotalData = self.newestTotalData()
-        //
-        //                let totalData = TotalData(managedObjectContext: self.stack.context)
-        //                totalData.total = Int16(total)
-        //                totalData.created = NSDate().timeIntervalSince1970
-        //
-        //                if let oldTotalData = oldTotalData {
-        //                    totalData.oldTotal = oldTotalData.total
-        //                }
-        //                self.stack.saveContext()
-        //
-        //                completion(totalData: totalData)
-        //            }
-        //        }
-    }
-
-    func newestTotalData() -> TotalData? {
-        guard let maybeNewestTotalData = try? TotalData.newest(self.stack.context), newestTotalData = maybeNewestTotalData else {
-            return nil
+    func refreshTotalData(completion: (totalData: TotalData?) -> Void) {
+        guard let
+            jiraURL = preferences.jiraURL,
+            username = preferences.username,
+            password = preferences.password,
+            filterId = preferences.filterId
+            else {
+                completion(totalData: nil)
+                return
         }
 
-        return newestTotalData
-    }
-
-    func allTotalData() -> [TotalData]? {
-        guard let allTotalData = try? TotalData.fetchUsingPredicate(nil, sortDescriptors: [NSSortDescriptor(key: "", ascending: true)], context: self.stack.context) else {
-            return nil
+        let basicAuth = BasicAuth(username: username, password: password)
+        guard let
+            maybeFilterData = try? FilterData.fetch(filterId, context: self.stack.context),
+            filterData = maybeFilterData
+            else {
+                completion(totalData: nil)
+                return
         }
 
-        return allTotalData
-    }
+        jira.fetchTotalData(filterData.jql, baseURL: jiraURL, basicAuth: basicAuth) { data in
+            dispatch_async(dispatch_get_main_queue()) {
+                guard let data = data else {
+                    completion(totalData: nil)
+                    return
+                }
 
-    func countTotalData() -> Int {
-        guard let count = try? TotalData.fetchCount(self.stack.context) else {
-            return 0
+                let json = JSON(data: data)
+                let maybeTotalData = TotalData.from(json, context: self.stack.context)
+
+                guard let totalData = maybeTotalData else {
+                    completion(totalData: nil)
+                    return
+                }
+                
+                self.stack.saveContext()
+                
+                completion(totalData: totalData)
+            }
         }
-        
-        return count
     }
 }

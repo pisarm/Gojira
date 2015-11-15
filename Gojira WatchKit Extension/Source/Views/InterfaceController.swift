@@ -15,8 +15,6 @@ class InterfaceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-
-        //        DataService.sharedInstance.addDelegate(self)
     }
 
     override func willActivate() {
@@ -24,70 +22,74 @@ class InterfaceController: WKInterfaceController {
 
         setTitle("Gojira")
         refreshLabels()
+        refreshMenus()
+
+        NSNotificationCenter.defaultCenter().addObserverForName(Preferences.ContextTypeDidChangeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { _ in
+            self.refreshLabels()
+            self.refreshMenus()
+        }
     }
 
     override func didDeactivate() {
-        //        DataService.sharedInstance.removeDelegate(self)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
 
         super.didDeactivate()
     }
 
+    //MARK: Actions
     @IBAction func actionFilters() {
         presentControllerWithName("FiltersController", context: nil)
-    }
-
-    @IBAction func actionRefresh() {
-//        DataFacade.sharedInstance.refreshTotal {
-//            self.refreshLabels($0)
-//        }
     }
 
     @IBAction func actionSettings() {
         presentControllerWithName("SettingsController", context: nil)
     }
 
+    @IBAction func actionRefresh() {
+        DataFacade.sharedInstance.refreshTotalData {
+            self.refreshLabels($0)
+        }
+    }
+
+    //MARK: Refresh
     private func refreshLabels() {
-        refreshLabels(DataFacade.sharedInstance.newestTotalData())
+        refreshLabels(DataFacade.sharedInstance.fetchNewestTotalData())
     }
 
     private func refreshLabels(totalData: TotalData?) {
-        totalLabel.setText("No data")
+        if !DataFacade.sharedInstance.initialized {
+            titleLabel.setText("Please")
+            totalLabel.setText("init")
+            return
+        }
+
+        guard let totalData = totalData else {
+            totalLabel.setText("No data")
+            titleLabel.setText(DataFacade.sharedInstance.title)
+
+            return
+        }
+
+        let diff = totalData.total - totalData.oldTotal
+        var totalString = "\(totalData.total)"
+        if totalData.total > totalData.oldTotal {
+            totalString += "(+\(diff))"
+            WKInterfaceDevice.currentDevice().playHaptic(.DirectionUp)
+        } else if totalData.total < totalData.oldTotal {
+            totalString += "(\(diff))"
+            WKInterfaceDevice.currentDevice().playHaptic(.DirectionDown)
+        }
+
         titleLabel.setText(DataFacade.sharedInstance.title)
+        totalLabel.setText(totalString)
+    }
 
-        if let totalData = totalData {
-            let diff = totalData.total - totalData.oldTotal
-            var totalString = "\(totalData.total)"
-            if totalData.total > totalData.oldTotal {
-                totalString += "(+\(diff))"
-                WKInterfaceDevice.currentDevice().playHaptic(.DirectionUp)
-            } else if totalData.total < totalData.oldTotal {
-                totalString += "(\(diff))"
-                WKInterfaceDevice.currentDevice().playHaptic(.DirectionDown)
-            }
-
-            totalLabel.setText(totalString)
+    private func refreshMenus() {
+        clearAllMenuItems()
+        if DataFacade.sharedInstance.initialized {
+            addMenuItemWithItemIcon(.Shuffle, title: "Filter", action: "actionFilters")
+            addMenuItemWithItemIcon(.More, title: "Settings", action: "actionSettings")
+            addMenuItemWithItemIcon(.Repeat, title: "Refresh", action: "actionRefresh")
         }
     }
 }
-
-//extension InterfaceController: DataServiceDelegate {
-//    //MARK: DataServiceDelegate
-//    func dataUpdated<T>(type: DataType, value: T) {
-//        switch type {
-//        case .Query:
-//            break
-//        case .Refresh:
-//            break
-//        case .Title:
-//            guard let value = value as? String else {
-//                break
-//            }
-//            titleLabel.setText(value)
-//        case .Total:
-//            guard let value = value as? Int else {
-//                break
-//            }
-//            totalLabel.setText("\(value)")
-//        }
-//    }
-//}

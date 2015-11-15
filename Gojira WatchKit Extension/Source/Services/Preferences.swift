@@ -36,6 +36,7 @@ enum RefreshType: Double {
 }
 
 private enum PreferenceType: String {
+    case FilterId
     case Refresh
     case Title
 }
@@ -43,27 +44,27 @@ private enum PreferenceType: String {
 final class Preferences {
     //MARK: Stored in keychain
     var username: String? {
-            guard let value = preference(forKey: .Username) as? String else {
-                return nil
-            }
+        guard let value = preference(forKey: .Username) as? String else {
+            return nil
+        }
 
-            return value
+        return value
     }
 
     var password: String? {
-            guard let value = preference(forKey: .Password) as? String else {
-                return nil
-            }
+        guard let value = preference(forKey: .Password) as? String else {
+            return nil
+        }
 
-            return value
+        return value
     }
 
     var jiraURL: String? {
-            guard let value = preference(forKey: .JiraURL) as? String else {
-                return nil
-            }
+        guard let value = preference(forKey: .JiraURL) as? String else {
+            return nil
+        }
 
-            return value
+        return value
     }
 
     //MARK: Stored using NSUserDefaults
@@ -83,7 +84,7 @@ final class Preferences {
     var title: String {
         get {
             guard let string = self.defaults.objectForKey(PreferenceType.Title.rawValue) as? String else {
-                return "Issues"
+                return ""
             }
 
             return string
@@ -93,24 +94,48 @@ final class Preferences {
         }
     }
 
+    var filterId: String? {
+        get {
+            guard let string = self.defaults.objectForKey(PreferenceType.FilterId.rawValue) as? String else {
+                return nil
+            }
+
+            return string
+        }
+        set {
+            self.defaults.setObject(newValue, forKey: PreferenceType.FilterId.rawValue)
+        }
+    }
 
     //MARK: Properties
     static let sharedInstance = Preferences()
-    private let userAccount = "dk.pisarm.gojira-watch.preferences"
-    private var preferenceData: [String : AnyObject] = [:]
+    private static let userAccount = "dk.pisarm.gojira-watch.preferences"
+    private lazy var preferenceData: [String : AnyObject] = {
+        guard let preferenceData = Locksmith.loadDataForUserAccount(userAccount) else {
+            return [:]
+        }
+
+        return preferenceData
+    }()
     private let defaults = NSUserDefaults.standardUserDefaults()
 
-    //MARK: Set and get
+    //MARK: ContextType
+
+    static let ContextTypeDidChangeNotification = "ContextTypeDidChangeNotification"
+
     func setPreference(value: AnyObject?, forKey key: ContextType) {
         guard let value = value else {
             return
         }
 
         preferenceData[key.rawValue] = value
+        NSNotificationCenter.defaultCenter().postNotificationName(Preferences.ContextTypeDidChangeNotification, object: nil)
 
         do {
-            try Locksmith.updateData(preferenceData, forUserAccount: userAccount)
-        } catch { print(error) }
+            try Locksmith.updateData(preferenceData, forUserAccount: Preferences.userAccount)
+        } catch {
+            print(error)
+        }
     }
 
     private func preference(forKey key: ContextType) -> AnyObject? {

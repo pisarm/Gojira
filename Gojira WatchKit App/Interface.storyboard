@@ -21,25 +21,6 @@
                             </items>
                         </group>
                     </items>
-                    <menu key="menu" id="uyM-k6-Nca">
-                        <items>
-                            <menuItem title="Filters" icon="repeat" id="1z2-Nk-wQH">
-                                <connections>
-                                    <action selector="actionFilters" destination="AgC-eL-Hgc" id="fz9-lx-da4"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Settings" icon="shuffle" id="y4L-12-9xW">
-                                <connections>
-                                    <action selector="actionSettings" destination="AgC-eL-Hgc" id="qt6-We-2mj"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Refresh" icon="resume" id="sfU-9s-ILr">
-                                <connections>
-                                    <action selector="actionRefresh" destination="AgC-eL-Hgc" id="Frx-t6-4sd"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
                     <connections>
                         <outlet property="titleLabel" destination="32w-z0-FmG" id="nvT-7C-KvZ"/>
                         <outlet property="totalLabel" destination="4JM-A5-sRE" id="LFU-7p-mSI"/>
@@ -78,8 +59,8 @@
                     <items>
                         <table alignment="left" id="gy1-Hb-ueS">
                             <items>
-                                <tableRow identifier="FilterRow" id="B4f-S9-whK" customClass="FilterRow" customModule="Gojira_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" animationDuration="1" layout="vertical" id="K0b-Yl-gD1">
+                                <tableRow identifier="FiltersRow" id="B4f-S9-whK" customClass="FiltersRow" customModule="Gojira_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" animationDuration="1" layout="vertical" spacing="8" id="K0b-Yl-gD1">
                                         <items>
                                             <label width="1" alignment="center" text="filter" textAlignment="center" numberOfLines="0" id="VVG-cO-rrH">
                                                 <fontDescription key="font" style="UICTFontTextStyleBody"/>

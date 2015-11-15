@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
     <entity name="FilterData" representedClassName="FilterData" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="jql" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
@@ -10,7 +11,7 @@
         <attribute name="total" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FilterData" positionX="-63" positionY="9" width="128" height="75"/>
+        <element name="FilterData" positionX="-63" positionY="9" width="128" height="90"/>
         <element name="TotalData" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

@@ -13,6 +13,7 @@ import Foundation
 import CoreData
 
 extension FilterData {
+    @NSManaged var id: String
     @NSManaged var name: String
     @NSManaged var jql: String
 }

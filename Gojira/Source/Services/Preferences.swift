@@ -77,7 +77,9 @@ final class Preferences {
 
         do {
             try Locksmith.updateData(preferenceData, forUserAccount: userAccount)
-        } catch { print(error) }
+        } catch {
+            print(error)
+        }
     }
 
     private func preference(forKey key: PreferenceType) -> AnyObject? {

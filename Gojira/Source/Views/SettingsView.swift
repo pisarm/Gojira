@@ -13,6 +13,7 @@ final class SettingsView: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var jiraURLField: UITextField!
+    @IBOutlet weak var sendConfigButton: UIButton!
 
     private let viewModel = SettingsViewModel()
 
@@ -28,5 +29,8 @@ final class SettingsView: UIViewController {
         viewModel.observableUsername.bidirectionalBindTo(usernameField.bnd_text)
         viewModel.observablePassword.bidirectionalBindTo(passwordField.bnd_text)
         viewModel.observableJiraURL.bidirectionalBindTo(jiraURLField.bnd_text)
+        sendConfigButton
+            .bnd_tap
+            .observe { self.viewModel.sendConfigAction() }
     }
 }

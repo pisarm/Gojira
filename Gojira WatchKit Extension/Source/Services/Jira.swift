@@ -72,7 +72,7 @@ final class Jira {
         fetch(url, authValue: authValue, completion: completion)
     }
 
-    func fetchTotal(jql: String, baseURL: String, basicAuth: BasicAuth, completion: (data: NSData?) -> Void) {
+    func fetchTotalData(jql: String, baseURL: String, basicAuth: BasicAuth, completion: (data: NSData?) -> Void) {
         guard let
             url = EndPoint(baseURL: baseURL, type: .Search(jql)).endPointURL(),
             authValue = basicAuth.authValue()

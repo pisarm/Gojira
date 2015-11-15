@@ -37,7 +37,7 @@
 		E47E700D1BE6BAAD00B1E5D2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */; };
 		E47E70101BE6BAB400B1E5D2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */; };
 		E47E70111BE6BAB400B1E5D2 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */; };
-		E4824F821BF3EA4C00FB94F8 /* FilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4824F811BF3EA4C00FB94F8 /* FilterRow.swift */; };
+		E4824F821BF3EA4C00FB94F8 /* FiltersRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4824F811BF3EA4C00FB94F8 /* FiltersRow.swift */; };
 		E48DB8191BF29B8800E40673 /* Jira.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB92FA1BF1648D00F26BE1 /* Jira.swift */; };
 		E4AB92F91BF1648600F26BE1 /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB92F81BF1648600F26BE1 /* Fetchable.swift */; };
 		E4AB92FB1BF1648D00F26BE1 /* Jira.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB92FA1BF1648D00F26BE1 /* Jira.swift */; };
@@ -166,7 +166,7 @@
 		E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		E47E700E1BE6BAB400B1E5D2 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E47E700F1BE6BAB400B1E5D2 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
-		E4824F811BF3EA4C00FB94F8 /* FilterRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterRow.swift; sourceTree = "<group>"; };
+		E4824F811BF3EA4C00FB94F8 /* FiltersRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersRow.swift; sourceTree = "<group>"; };
 		E4AB92F81BF1648600F26BE1 /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		E4AB92FA1BF1648D00F26BE1 /* Jira.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jira.swift; sourceTree = "<group>"; };
 		E4B2D50A1BEC919D007F1C4C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -401,12 +401,12 @@
 			isa = PBXGroup;
 			children = (
 				E47E70061BE6BAAD00B1E5D2 /* ComplicationController.swift */,
+				E4FFD15F1BF3390400183CE4 /* FiltersController.swift */,
+				E4824F811BF3EA4C00FB94F8 /* FiltersRow.swift */,
 				E47E70071BE6BAAD00B1E5D2 /* GlanceController.swift */,
 				E47E70081BE6BAAD00B1E5D2 /* InterfaceController.swift */,
 				E47E70091BE6BAAD00B1E5D2 /* NotificationController.swift */,
 				E40E37B71BE96A5B00B614B2 /* SettingsController.swift */,
-				E4FFD15F1BF3390400183CE4 /* FiltersController.swift */,
-				E4824F811BF3EA4C00FB94F8 /* FilterRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -678,12 +678,13 @@
 			files = (
 				E47E700A1BE6BAAD00B1E5D2 /* ComplicationController.swift in Sources */,
 				E4B2D50B1BEC919D007F1C4C /* CoreDataStack.swift in Sources */,
-				E4824F821BF3EA4C00FB94F8 /* FilterRow.swift in Sources */,
 				E4EB63D01BEC0C8700C85FAE /* DataFacade.swift in Sources */,
 				E47E70051BE6BAA600B1E5D2 /* ExtensionDelegate.swift in Sources */,
 				E4AB92F91BF1648600F26BE1 /* Fetchable.swift in Sources */,
 				E4F0166E1BF161D500594EA3 /* FilterData+CoreDataProperties.swift in Sources */,
 				E4F0166F1BF161D500594EA3 /* FilterData.swift in Sources */,
+				E4FFD1601BF3390400183CE4 /* FiltersController.swift in Sources */,
+				E4824F821BF3EA4C00FB94F8 /* FiltersRow.swift in Sources */,
 				E47E700B1BE6BAAD00B1E5D2 /* GlanceController.swift in Sources */,
 				E47E700C1BE6BAAD00B1E5D2 /* InterfaceController.swift in Sources */,
 				E4AB92FB1BF1648D00F26BE1 /* Jira.swift in Sources */,
@@ -692,7 +693,6 @@
 				E47E70101BE6BAB400B1E5D2 /* Preferences.swift in Sources */,
 				E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */,
 				E4F016631BF12F3300594EA3 /* SharedConstants.swift in Sources */,
-				E4FFD1601BF3390400183CE4 /* FiltersController.swift in Sources */,
 				E425F0DF1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift in Sources */,
 				E425F0E01BED4E7C0016F3AE /* TotalData.swift in Sources */,
 				E47E70111BE6BAB400B1E5D2 /* WatchSessionManager.swift in Sources */,

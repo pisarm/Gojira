@@ -12,10 +12,12 @@ import WatchKit
 final class FiltersController: WKInterfaceController {
     @IBOutlet var table: WKInterfaceTable!
 
-    private var filterData: [FilterData] = DataFacade.sharedInstance.fetchFilterData()
+    private var filterData: [FilterData] = []
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+
+        refreshData(DataFacade.sharedInstance.fetchFilterData())
         refreshTable()
      }
 
@@ -32,21 +34,37 @@ final class FiltersController: WKInterfaceController {
 
     @IBAction func actionRefresh() {
         DataFacade.sharedInstance.refreshFilterData {
-            self.filterData = $0
+            self.refreshData($0)
             self.refreshTable()
         }
     }
 
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        print(rowIndex)
+        if filterData.count == 0 {
+            return
+        }
+        
+        let selectedFilterData = filterData[rowIndex]
+        DataFacade.sharedInstance.filterId = selectedFilterData.id
+        DataFacade.sharedInstance.title = selectedFilterData.name
+    }
+
+    private func refreshData(filterData: [FilterData]) {
+        self.filterData = filterData.sort()
     }
 
     private func refreshTable() {
-        table.setNumberOfRows(filterData.count, withRowType: "FilterRow")
+        if filterData.count == 0 {
+            table.setNumberOfRows(1, withRowType: "FiltersRow")
+            let controller = table.rowControllerAtIndex(0) as! FiltersRow
+            controller.rowLabel.setText("No filters\nPlease refresh")
+        } else {
+            table.setNumberOfRows(filterData.count, withRowType: "FiltersRow")
 
-        for (index, filterData) in self.filterData.enumerate() {
-            let controller = table.rowControllerAtIndex(index) as! FilterRow
-            controller.rowLabel.setText(filterData.name)
+            for (index, filterData) in self.filterData.enumerate() {
+                let controller = table.rowControllerAtIndex(index) as! FiltersRow
+                controller.rowLabel.setText(filterData.name)
+            }
         }
     }
 }

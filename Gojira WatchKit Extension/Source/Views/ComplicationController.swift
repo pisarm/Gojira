@@ -42,7 +42,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
 
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
-        guard let totalData = DataFacade.sharedInstance.newestTotalData() else {
+        guard let totalData = DataFacade.sharedInstance.fetchNewestTotalData() else {
             handler(nil)
             return
         }
@@ -113,7 +113,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     // MARK: - Update Scheduling
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        if DataFacade.sharedInstance.countTotalData() == 0 {
+        if DataFacade.sharedInstance.fetchTotalDataCount() == 0 {
             return handler(NSDate())
         }
 

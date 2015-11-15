@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9xE-L6-94W">
-                                <rect key="frame" x="20" y="72" width="560" height="217"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="9xE-L6-94W">
+                                <rect key="frame" x="20" y="72" width="560" height="265"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7bz-3I-ifr">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="61"/>
@@ -35,13 +35,13 @@
                                                 <rect key="frame" x="0.0" y="31" width="560" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                         <animations/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dAK-1a-XBX">
-                                        <rect key="frame" x="0.0" y="81" width="560" height="61"/>
+                                        <rect key="frame" x="0.0" y="73" width="560" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn1-hn-EcE">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -54,13 +54,13 @@
                                                 <rect key="frame" x="0.0" y="31" width="560" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XGs-O5-1bZ">
-                                        <rect key="frame" x="0.0" y="166" width="560" height="51"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XGs-O5-1bZ">
+                                        <rect key="frame" x="0.0" y="151" width="560" height="51"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jira URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUC-ug-VLd">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -73,8 +73,19 @@
                                                 <rect key="frame" x="0.0" y="21" width="560" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                             </textField>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-lg-Fvb">
+                                        <rect key="frame" x="0.0" y="235" width="560" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efC-k5-Udu">
+                                                <rect key="frame" x="161" y="0.0" width="239" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Send configuration to Apple Watch"/>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                     </stackView>
@@ -94,6 +105,7 @@
                     <connections>
                         <outlet property="jiraURLField" destination="YCl-J9-tIY" id="cfy-wo-HaW"/>
                         <outlet property="passwordField" destination="dTb-cd-lII" id="R8S-dE-efc"/>
+                        <outlet property="sendConfigButton" destination="efC-k5-Udu" id="rlb-Y1-Ua0"/>
                         <outlet property="usernameField" destination="K4N-BN-jmC" id="GSR-oK-dc2"/>
                     </connections>
                 </viewController>

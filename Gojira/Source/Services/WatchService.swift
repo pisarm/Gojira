@@ -27,36 +27,28 @@ class WatchService: NSObject, WCSessionDelegate {
     func startSession() {
         session?.delegate = self
         session?.activateSession()
-
-        setupBonds()
     }
 
-    private func setupBonds() {
-        Preferences.sharedInstance.observableUsername
-            .observe {
-                if let username = $0 {
-                    do {
-                        try self.updateApplicationContext( [ContextType.Username.rawValue : username] )
-                    } catch { print(error) }
-                }
+    func sendConfiguration() {
+
+        guard let
+            username = Preferences.sharedInstance.observableUsername.value,
+            password = Preferences.sharedInstance.observablePassword.value,
+            jiraURL = Preferences.sharedInstance.observableJiraURL.value
+            else {
+                return
         }
 
-        Preferences.sharedInstance.observablePassword
-            .observe {
-                if let password = $0 {
-                    do {
-                        try self.updateApplicationContext( [ContextType.Password.rawValue : password] )
-                    } catch { print(error) }
-                }
-        }
+        let configuration = [
+            ContextType.Username.rawValue : username,
+            ContextType.Password.rawValue : password,
+            ContextType.JiraURL.rawValue : jiraURL,
+        ]
 
-        Preferences.sharedInstance.observableJiraURL
-            .observe {
-                if let jiraURL = $0 {
-                    do {
-                        try self.updateApplicationContext( [ContextType.JiraURL.rawValue : jiraURL] )
-                    } catch { print(error) }
-                }
+        do {
+            try self.updateApplicationContext( configuration )
+        } catch {
+            print(error)
         }
     }
 }
