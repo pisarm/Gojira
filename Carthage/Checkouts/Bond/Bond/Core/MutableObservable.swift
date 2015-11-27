@@ -22,10 +22,28 @@
 //  THE SOFTWARE.
 //
 
-public protocol BindableType {
-  typealias Element
-  
-  /// Returns a sink that can be used to dispatch events to the receiver.
-  /// Can accept a disposable that will be disposed on receiver's deinit.
-  func sink(disconnectDisposable: DisposableType?) -> (Element -> Void)
+public struct MutableObservable<Wrapped>: EventProducerType {
+
+  private var observable: Observable<Wrapped>
+
+  public var value: Wrapped {
+    get {
+      return observable.value
+    }
+    set {
+      observable.value = newValue
+    }
+  }
+
+  public init(_ value: Wrapped) {
+    observable = Observable(value)
+  }
+
+  public var replayLength: Int {
+    return observable.replayLength
+  }
+
+  public func observe(observer: Wrapped -> Void) -> DisposableType {
+    return observable.observe(observer)
+  }
 }

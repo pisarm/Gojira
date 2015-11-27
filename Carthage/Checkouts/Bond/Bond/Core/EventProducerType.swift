@@ -41,7 +41,7 @@ public extension EventProducerType {
   
   /// Registers the observer that will receive only events generated after registering.
   /// A better performing verion of observable.skip(observable.replyLength).observe().
-  public func observeNew(observer: EventType -> ()) -> DisposableType {
+  public func observeNew(observer: EventType -> Void) -> DisposableType {
     var skip: Int = replayLength
     return observe { value in
       if skip > 0 {
@@ -154,7 +154,7 @@ public extension EventProducerType {
       var myEvent: EventType! = nil
       var itsEvent: U.EventType! = nil
       
-      let onBothNext = { () -> () in
+      let onBothNext = { () -> Void in
         if let myEvent = myEvent, let itsEvent = itsEvent {
           sink((myEvent, itsEvent))
         }
@@ -340,4 +340,14 @@ public func combineLatest<A: EventProducerType, B: EventProducerType, C: EventPr
   ( a: A, _ b: B, _ c: C, _ d: D, _ e: E, _ f: F, _ g: G, _ h: H, _ i: I, _ j: J, _ k: K) -> EventProducer<(A.EventType, B.EventType, C.EventType, D.EventType, E.EventType, F.EventType, G.EventType, H.EventType, I.EventType, J.EventType, K.EventType)>
 {
   return combineLatest(a, b, c, d, e, f, g, h, i, j).combineLatestWith(k).map { ($0.0, $0.1, $0.2, $0.3, $0.4, $0.5, $0.6, $0.7, $0.8, $0.9, $1) }
+}
+
+public func merge<S: SequenceType where S.Generator.Element: EventProducerType>(sequence: S) -> EventProducer<S.Generator.Element.EventType> {
+  return EventProducer { sink in
+    let compositeDisposable = CompositeDisposable()
+    sequence.forEach { producer in
+      compositeDisposable += producer.observe(sink)
+    }
+    return compositeDisposable
+  }
 }
