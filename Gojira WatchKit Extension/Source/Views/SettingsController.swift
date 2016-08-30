@@ -36,7 +36,7 @@ class SettingsController: WKInterfaceController {
 
         intervalPicker.setItems(pickerItems)
 
-        for (index, minute) in minutes.enumerate() {            
+        for (index, minute) in minutes.enumerate() {
             if refresh.rawValue == minute.rawValue {
                 intervalPicker.setSelectedItemIndex(index)
                 break
@@ -55,7 +55,7 @@ class SettingsController: WKInterfaceController {
 
     @IBAction func intervalPickerChanged(value: Int) {
         WKInterfaceDevice.currentDevice().playHaptic(.Click)
-        
+
         refresh = minutes[value]
     }
 }

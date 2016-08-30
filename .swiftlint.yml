@@ -1,0 +1,8 @@
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - statement_position
+included: # paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.
+  - Gojira
+  - Gojira Shared
+  - Gojira WatchKit App
+  - Gojira WatchKit Extension

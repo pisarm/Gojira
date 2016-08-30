@@ -28,7 +28,7 @@ final class FiltersController: WKInterfaceController {
     }
 
     override func didDeactivate() {
-        
+
         super.didDeactivate()
     }
 
@@ -43,7 +43,7 @@ final class FiltersController: WKInterfaceController {
         if filterData.count == 0 {
             return
         }
-        
+
         let selectedFilterData = filterData[rowIndex]
         DataFacade.sharedInstance.filterId = selectedFilterData.id
         DataFacade.sharedInstance.title = selectedFilterData.name

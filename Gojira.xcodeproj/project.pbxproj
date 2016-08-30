@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E4031CFB1C4433A5004CBF9F /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E4031CFE1C4433A5004CBF9F /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+				E4031CFF1C4433AA004CBF9F /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+			productName = Lint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		E40E37B81BE96A5B00B614B2 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E37B71BE96A5B00B614B2 /* SettingsController.swift */; };
 		E425F0DF1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0DD1BED4E7C0016F3AE /* TotalData+CoreDataProperties.swift */; };
@@ -519,6 +533,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = pisarm.dk;
 				TargetAttributes = {
+					E4031CFB1C4433A5004CBF9F = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					E47E6F7F1BE6B1CA00B1E5D2 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = W876623E2K;
@@ -558,6 +575,7 @@
 				E47E6F9C1BE6B1CA00B1E5D2 /* Gojira WatchKit App */,
 				E47E6FAB1BE6B1CA00B1E5D2 /* Gojira WatchKit Extension */,
 				E47E6F931BE6B1CA00B1E5D2 /* GojiraTests */,
+				E4031CFB1C4433A5004CBF9F /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
@@ -600,6 +618,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		E4031CFF1C4433AA004CBF9F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/swiftlint lint";
+		};
 		E425F0E51BF00BB40016F3AE /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -720,6 +751,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E4031CFC1C4433A5004CBF9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4031CFD1C4433A5004CBF9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		E47E6FC01BE6B1CA00B1E5D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -938,6 +983,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E4031CFE1C4433A5004CBF9F /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4031CFC1C4433A5004CBF9F /* Debug */,
+				E4031CFD1C4433A5004CBF9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E47E6F7B1BE6B1CA00B1E5D2 /* Build configuration list for PBXProject "Gojira" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
